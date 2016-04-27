@@ -121,14 +121,15 @@ PRIMARY NAVIGATION
 	border: none;
 	color: $dark-blue;
 }
+#primary-nav li.current_page_ancestor > a:first-child {
+	color: $white;
+}
 #primary-nav .parent a {
 	&:after {
 		content: " \25E2";
 		font-size: 0.6em;
-		// vertical-align: top;
 	}
 }
-
 #primary-nav .parent li a {
 	padding-right: 25px;
   	background: transparent url(images/bg-sprite-transparent.png) -1198px -559px no-repeat; 

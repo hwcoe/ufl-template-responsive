@@ -15,7 +15,7 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
-# Windows shortcuts
+# Windows shortcuts and OS files
 *.lnk
 
 # Sass
