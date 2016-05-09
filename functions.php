@@ -108,8 +108,13 @@ function uf_login_css () { ?>
 				width:320px;
 				height:60px;
 		}
+	
+	/* 
+	If the current blog is not eng.ufl.edu/students/ then hide the login fields
+	Comment out for non-shibboleth sites 
+	TODO: bugfix to make theme portable without alteration
+	*/
 	<?php 
-		// if the current blog is not eng.ufl.edu/students/ then hide the login fields
 		if (get_current_blog_id() != 5) {	
 	?>
 		.login #nav, 
