@@ -20,7 +20,7 @@ $sans: 'gentona';
 
 @mixin spaced-headline($font) {
 	@if $font == serif {
-		font-family: $serif, Georgia, sans-serif;
+		font-family: $serif, Georgia, serif;
 	}
 	@else if $font == sans {
 		font-family: $sans, Arial, Helvetica, sans-serif;
