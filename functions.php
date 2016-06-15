@@ -110,22 +110,22 @@ function uf_login_css () { ?>
 		}
 	
 	/* 
-	If the current blog is not eng.ufl.edu/students/ then hide the login fields
-	Comment out for non-shibboleth sites 
-	TODO: bugfix to make theme portable without alteration
+	If the current site is not eng.ufl.edu/students/ and site uses Shibb authentication then hide the login fields
 	*/
 	<?php 
-		if (get_current_blog_id() != 5) {	
-	?>
-		.login #nav, 
-		.login #loginform p {
-			display:none;
-		}
-		.login #loginform p#shibboleth_login {
-			display:block;
-			text-align:center;
-		}
+		if (function_exists('shibboleth_login_form')) {	
+			if (get_current_blog_id() != 5) {	
+		?>
+			.login #nav, 
+			.login #loginform p {
+				display:none;
+			}
+			.login #loginform p#shibboleth_login {
+				display:block;
+				text-align:center;
+			}
 	<?php
+			}
 		}
 	?>
 		
