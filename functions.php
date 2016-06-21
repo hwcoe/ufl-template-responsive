@@ -315,9 +315,9 @@ add_action('init', 'ufandshands_footer_common_scripts');
 function ufandshands_single_scripts() {
 	if(is_singular()  && !is_admin()) {
 		wp_enqueue_script('comment-reply'); // loads the javascript required for threaded comments 
-		wp_enqueue_script('plusone', "https://apis.google.com/js/plusone.js");
 		wp_enqueue_script('facebook', "https://connect.facebook.net/en_US/all.js#xfbml=1");
 		wp_enqueue_script('twitter', "https://platform.twitter.com/widgets.js");
+		wp_enqueue_script('linkedin', "https://platform.linkedin.com/in.js");
 	}
 }
 add_action('wp_print_scripts', 'ufandshands_single_scripts');
