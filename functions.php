@@ -450,23 +450,12 @@ function remove_featured_image_field() {
 //add_action('do_meta_boxes', 'remove_featured_image_field');
 
 /* ----------------------------------------------------------------------------------- */
-/* 	Gravity Forms custom code section
+/* 	Gravity Forms custom code and enhancements
 /* ----------------------------------------------------------------------------------- */
 
-/*
-// Gravity forms required inclusions
-
-if (!is_admin()) {
-	wp_enqueue_script("gforms_ui_datepicker", plugins_url("gravityforms/js/jquery-ui/ui.datepicker.js"), array("jquery"), "1.3.9", true);
-	wp_enqueue_script("gforms_datepicker", plugins_url("gravityforms/js/datepicker.js"), array("gforms_ui_datepicker"), "1.3.9", true);
-	wp_enqueue_script("gforms_conditional_logic_lib", plugins_url("gravityforms/js/conditional_logic.js"), array("gforms_ui_datepicker"), "1.3.9", true);
-	wp_enqueue_style("gforms_css", plugins_url("gravityforms/css/forms.css"));
+if ( class_exists( 'GFCommon' ) ) {
+    include ('plugins/gravityforms/gf-addons.php');	
 }
-
-// Gravity Forms tabindex fix
-add_filter("gform_tabindex", create_function("", "return 15;"));
-*/
-
 
 /* ----------------------------------------------------------------------------------- */
 /* 	Search Text
