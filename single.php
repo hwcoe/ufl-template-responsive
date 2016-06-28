@@ -38,8 +38,8 @@
 				<div id="social-content">
 					<div><fb:like href="<?php echo get_permalink(); ?>" show_faces="false" layout="button_count" send="true"></fb:like></div>
 					<div>
-						<a href="https://twitter.com/FloridaEngineer" class="twitter-follow-button" data-show-count="false">Follow @FloridaEngineer</a>
-						<a href="https://twitter.com/share" class="twitter-share-button" data-via="FloridaEngineer" data-count="horizontal">Tweet</a>
+						<a href="https://twitter.com/UFWertheim" class="twitter-follow-button" data-show-count="false">Follow @UFWertheim</a>
+						<a href="https://twitter.com/share" class="twitter-share-button" data-via="UFWertheim" data-count="horizontal">Tweet</a>
 					</div>
 					<div style="margin-left: 20px;"><script type="IN/Share"></script></div>
 				</div>

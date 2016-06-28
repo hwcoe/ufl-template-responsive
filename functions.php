@@ -741,11 +741,11 @@ function ufandshands_register_menus() {
 
 $college_inst_data = array(
 		"University of Florida" => array(
-				"facebook" => "https://www.facebook.com/gatorengineering",
-				"twitter" => "https://twitter.com/floridaengineer/",
+				"facebook" => "https://www.facebook.com/ufwertheim/",
+				"twitter" => "https://twitter.com/ufwertheim/",
 				"youtube" => "https://www.youtube.com/user/gatorengineering",
-				"linkedin" => "https://www.linkedin.com/grp/home?gid=8412066",
-				"instagram" => "https://instagram.com/gatorengineering/",
+				"linkedin" => "https://www.linkedin.com/edu/school?id=193009",
+				"instagram" => "https://instagram.com/ufwertheim/",
 				"flickr" => "https://www.flickr.com/photos/gatorengineering/"
 	)
 );

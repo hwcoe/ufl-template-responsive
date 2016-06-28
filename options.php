@@ -98,14 +98,14 @@ function optionsframework_options() {
 
 	$options[] = array( "name" => "Facebook",
 			"super-admin-only" => "1",
-			"desc" => "Enter the url of your organization's Facebook page (default: https://www.facebook.com/gatorengineering)",
+			"desc" => "Enter the url of your organization's Facebook page (default: https://www.facebook.com/ufwertheim/)",
 			"id" => "opt_facebook_url",
 			"std" => "",
 			"type" => "text");
 			
 	$options[] = array( "name" => "Twitter",
 			"super-admin-only" => "1",
-			"desc" => "Enter the url of your organization's Twitter page (default: https://twitter.com/floridaengineer/)",
+			"desc" => "Enter the url of your organization's Twitter page (default: https://twitter.com/ufwertheim/)",
 			"id" => "opt_twitter_url",
 			"std" => "",
 			"type" => "text");
@@ -119,14 +119,14 @@ function optionsframework_options() {
 
 	$options[] = array( "name" => "LinkedIn",
 			"super-admin-only" => "1",
-			"desc" => "Enter the url of your organization's LinkedIn profile (default: https://www.linkedin.com/profile/view?id=180967085)",
+			"desc" => "Enter the url of your organization's LinkedIn profile (default: https://www.linkedin.com/edu/school?id=193009)",
 			"id" => "opt_linkedin_url",
 			"std" => "",
 			"type" => "text");
 		
 	$options[] = array( "name" => "Instagram",
 			"super-admin-only" => "1",
-			"desc" => "Enter the url of your organization's Instagram profile (default: https://instagram.com/gatorengineering/)",
+			"desc" => "Enter the url of your organization's Instagram profile (default: https://instagram.com/ufwertheim/)",
 			"id" => "opt_instagram_url",
 			"std" => "",
 			"type" => "text");
