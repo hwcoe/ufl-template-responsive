@@ -5,14 +5,14 @@
     <div id="content" class="container">
 
       <article id="main-content" class="span-17" role="main">
-        <div class="display-posts-listing">
+        <div class="box">
 
         <?php if (have_posts()) : ?>			
 
           <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 
           <?php /* If this is a category archive */ if (is_category()) { ?>
-            <h1 class="page-title medium-blue"><strong class="dark-blue"><?php single_cat_title(); ?></strong> Category <a title="Subscribe to <?php single_cat_title(); ?> RSS Feed" href="feed/"><img class="rss-icon" src="<?php bloginfo('template_directory'); ?>/images/rss.png" alt="Subscribe to RSS Feed" /></a></h1>
+            <h1 class="page-title"><?php single_cat_title(); ?> <a title="Subscribe to <?php single_cat_title(); ?> RSS Feed" href="feed/"><img class="rss-icon" src="<?php bloginfo('template_directory'); ?>/images/rss.png" alt="Subscribe to RSS Feed" /></a></h1>
 
           <?php /* If this is a tag archive */
           } elseif (is_tag()) { ?>
@@ -65,7 +65,7 @@
         ?>
 
                   <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-                  <p class="published"><span class="black-50"><?php echo ( in_category( array('speeches','speech') ) ? 'Date:' : 'Published:' )?> <?php the_time('M jS, Y') ?></p>
+                  <p class="published"><span class="black-50">Published: <?php the_time('M jS, Y') ?></p>
 
         <?php the_excerpt(); ?>
 
@@ -86,7 +86,7 @@
       }
       ?>
                 <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>  
-                <p class="published"><span class="black-50"><?php echo ( in_category( array('speeches','speech') ) ? 'Date:' : 'Published:' )?> <?php the_time('M jS, Y') ?></p>
+                <p class="published"><span class="black-50">Published: <?php the_time('M jS, Y') ?></p>
               <?php the_excerpt(); ?>
 
               </div><!-- end .entry -->

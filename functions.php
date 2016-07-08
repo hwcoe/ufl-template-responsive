@@ -384,7 +384,7 @@ remove_action('wp_head', 'wlwmanifest_link'); // Removes Windows Live Writer Lin
 remove_action('wp_head', 'wp_generator'); // Removes WP version from head
 //remove_action( 'wp_head', 'rsd_link' ); // Removes the link to the Really Simple Discovery service endpoint, EditURI link
 remove_action( 'wp_head', 'index_rel_link' ); // index link
-//add_filter('login_errors',create_function('$a', "return null;")); //removes detailed login errors
+remove_filter('term_description','wpautop'); // removes <p> tags from category description
 
 add_filter('login_errors','login_error_message');
 

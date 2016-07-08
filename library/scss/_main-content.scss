@@ -184,7 +184,23 @@ ul.arrow {
 		margin-bottom: -65px;
 		position: relative;
 }
-
+.rss-icon {
+	border: none;
+	padding: 0.25em;
+	float:right;
+}
+.award-logo {
+	text-align: center;
+	margin: 1em 0 2em 0;
+	border-top: 8px solid $light-blue;
+	border-bottom: 8px solid $light-blue;
+	white-space:nowrap;
+	img {
+		width:20%;
+		padding:0.75em 1em 0.75em 0;
+		height:auto;
+	}
+}
 
 /* Icons list - Icons are spaced 200px apart vertically in sprite. */
 .bg-icon {
