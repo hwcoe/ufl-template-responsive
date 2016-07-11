@@ -384,7 +384,6 @@ remove_action('wp_head', 'wlwmanifest_link'); // Removes Windows Live Writer Lin
 remove_action('wp_head', 'wp_generator'); // Removes WP version from head
 //remove_action( 'wp_head', 'rsd_link' ); // Removes the link to the Really Simple Discovery service endpoint, EditURI link
 remove_action( 'wp_head', 'index_rel_link' ); // index link
-remove_filter('term_description','wpautop'); // removes <p> tags from category description
 
 add_filter('login_errors','login_error_message');
 
@@ -425,7 +424,6 @@ function new_mail_from_name($old) {
 	$blog_name = get_bloginfo('name');
 	return $blog_name;
 }
-
 
 /* ----------------------------------------------------------------------------------- */
 /* 	Removing some boxes from the write screens; less clutter
@@ -474,7 +472,6 @@ function ufandshands_search_text() {
 	echo $blog_name;
 }
 
-
 /* ----------------------------------------------------------------------------------- */
 /* 	Members Only
 /* ----------------------------------------------------------------------------------- */
@@ -486,6 +483,12 @@ function ufandshands_members_only() {
 		return false;
 	}
 }
+
+/* ----------------------------------------------------------------------------------- */
+/* 	Category Archive Customization
+/* ----------------------------------------------------------------------------------- */
+
+remove_filter('term_description','wpautop'); // removes <p> tags from category description
 
 
 /* ----------------------------------------------------------------------------------- */

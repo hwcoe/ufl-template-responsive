@@ -11,8 +11,8 @@
 					<h1 class="page-title"><?php single_cat_title(); ?> <a title="Subscribe to <?php single_cat_title(); ?> RSS Feed" href="feed/"><img class="rss-icon" src="<?php bloginfo('template_directory'); ?>/images/rss.png" alt="Subscribe to RSS Feed" /></a></h1>
 
 					<?php 
-							// show the Honors and Awards category description
-							echo '<p class="lead">' . category_description( $category_id ) . '</p>';
+						// show the Honors and Awards category description
+						echo '<p class="lead">' . category_description() . '</p>';
 					?>
 					<div class="award-logo">
 						<img src="https://www.eng.ufl.edu/wp-content/uploads/2016/07/asee-logo.png" alt="American Society for Engineering Education logo" />
