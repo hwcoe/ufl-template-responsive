@@ -127,6 +127,7 @@
 					<div class="widget sidebar_widget">
 						<h3><a href="<?php echo get_category_link($parentcat); ?>">Honors and Awards</a></h3>
 							<div id='recent-posts' class='news-announcements'>
+							<h4><a href="/about/facts-figures/submit-honors-and-awards/">Submit your department's honors and awards</a></h4>
 							<?php					
 								$args = array('parent' => $parentcat);
 								$categories = get_categories( $args );

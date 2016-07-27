@@ -576,21 +576,6 @@ header {
 /*-  PAGINATION
 ----------------------------------------------------------------------*/
 
-.show-all {
-	margin-bottom: 20px;
-	overflow: auto;
-	background-color: $very-light-blue;
-	padding: 5px 8px;
-	text-shadow: 0 1px 1px $white;
-	border-bottom: 1px solid $light-blue;
-	div {
-		float: right;
-		text-align: right;
-		background: url(images/arrow.png) no-repeat right 2px;
-		padding-right: 16px;
-	}
-}
-
 .pagination {
 	clear:both;
 	padding:20px 0;

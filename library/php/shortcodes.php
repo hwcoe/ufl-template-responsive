@@ -629,6 +629,9 @@ function be_display_posts_shortcode($atts) {
 		if ( $image_size && has_post_thumbnail() )  $image = '<a class="image" href="'. get_permalink() .'">'. get_the_post_thumbnail($post->ID, $image_size).'</a> ';
 		else $image = '';
 
+		// if ($image_size) $image = ufandshands_post_thumbnail($image_size, 'alignleft', 150, 150);  
+		// else $image = '';	
+
 		$title = '<h2><a href="'. get_permalink() .'">'. get_the_title() .'</a></h2>';
 		
 		

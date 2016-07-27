@@ -21,6 +21,7 @@ $RECYCLE.BIN/
 # Sass
 .sass-cache/
 *.css.map
+*.scssc
 
 #Wordpress
 *.log

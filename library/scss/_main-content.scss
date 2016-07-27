@@ -191,9 +191,9 @@ ul.arrow {
 }
 .award-logo {
 	text-align: center;
-	margin: 1em 0 2em 0;
-	border-top: 8px solid $light-blue;
-	border-bottom: 8px solid $light-blue;
+	margin: 1em 0;
+	border-top: 8px solid $very-light-blue;
+	border-bottom: 8px solid $very-light-blue;
 	white-space:nowrap;
 	img {
 		width:20%;
@@ -437,4 +437,14 @@ tbody tr.even td {background:$very-light-blue;}
 .listing-item {
 	clear:both;
 	margin:1em 0;
+}
+.subcategory-heading {
+	color:$orange;
+	background-color: $very-light-blue;
+	padding: 2px 8px;
+	margin-top:20px;
+	border-bottom: 1px solid $light-blue;
+	a {
+		border-bottom:none;
+	}
 }

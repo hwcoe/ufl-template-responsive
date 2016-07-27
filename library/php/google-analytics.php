@@ -11,7 +11,7 @@ _gaq.push(['_trackPageLoadTime']);
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
             
-$(document).ready(function() {
+jQuery(document).ready(function($) {
     $('a').click(function() {
         var href = $(this).attr('href');
         if (href.match(/^http/) && !href.match(document.domain)) {

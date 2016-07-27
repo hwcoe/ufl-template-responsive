@@ -136,7 +136,7 @@ function ufandshands_getMetaBoxes() {
 			  'desc' => 'Enter the text that will appear as a button',
 			  'id' => $prefix . 'featured_content_button_text',
 			  'type' => 'text',
-			  'std' => '',
+			  'std' => 'Read More',
 			),
 
 				array(
