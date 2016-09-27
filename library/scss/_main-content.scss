@@ -65,6 +65,9 @@ article {
 			border-bottom: 1px solid $black-75;
 		}
 	}
+	ul, ol {
+		overflow:hidden;
+	}
 	li {
 		margin-bottom: .5em;
 	}
@@ -103,6 +106,7 @@ article {
 	position: relative;
 	top: 5px;
 	height: 28px;
+	overflow:visible !important;
 
 	li {
 		font-size: 1em;

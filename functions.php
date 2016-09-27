@@ -451,10 +451,9 @@ function remove_featured_image_field() {
 /* 	Gravity Forms custom code and enhancements
 /* ----------------------------------------------------------------------------------- */
 
-if ( class_exists( 'GFCommon' ) ) {
+if ( class_exists( 'GFCommon' ) && file_exists('plugins/gravityforms/gf-addons.php')) {
     include ('plugins/gravityforms/gf-addons.php');	
 }
-
 /* ----------------------------------------------------------------------------------- */
 /* 	Search Text
 /* ----------------------------------------------------------------------------------- */
@@ -944,8 +943,10 @@ if (!empty($ufandshands_alternate_logo)) {
 													background-image: url(" . $ufandshands_alternate_logo . ");
 													background-repeat: no-repeat;
 													background-attachment: scroll;
+													background-size: contain;
 													height: " . $alternative_site_logo_height . "px;
 													width: " . $alternative_site_logo_width . "px;
+													margin-bottom: 0px;
 													margin-right: 10px;	}";
 		$alternate_logo_css .= "</style>";
 
