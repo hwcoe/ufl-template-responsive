@@ -33,7 +33,7 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 						if (!empty($contact_physical)) {
 							echo $contact_physical . "<br />";
 						} else {
-							echo "300 Weil Hall<br />";
+							echo "300 Weil Hall<br />1949 Stadium Road<br />";
 						}
 
 						$contact_postal = of_get_option("opt_contact_postal");
@@ -52,16 +52,14 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 
 						$contact_phone = of_get_option("opt_contact_phone");
 						if (!empty($contact_phone)) {
-							echo "Phone: " . $contact_phone . "<br />";
+							echo "Phone: " . $contact_phone . "<br /><a href=\"https://www.eng.ufl.edu/about/contact/\">Full list of office phone numbers</a><br />";
 						} else {
-							echo "Phone: 352-392-6000<br />";
+							echo "<a href=\"https://www.eng.ufl.edu/about/contact/\">List of office phone numbers</a><br />";
 						}
 
 						$contact_fax = of_get_option("opt_contact_fax");
 						if (!empty($contact_fax)) {
 							echo "Fax: " . $contact_fax . "</p>";
-						} else {
-							echo "Fax: 352-392-9673</p>";
 						}
 
 						$contact_email = of_get_option("opt_contact_email");
@@ -79,8 +77,8 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 						} elseif ( !empty($webmaster_email) ) {
 						echo $webmaster_email;
 						} else {
-						echo "mailto:webmaster@eng.ufl.edu";
-					}
+							echo "mailto:webmaster@eng.ufl.edu";
+						}
 						echo "\">Contact webmaster</a>";
 
 					?>
