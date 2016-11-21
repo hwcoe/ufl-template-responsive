@@ -46,3 +46,8 @@ wp-content/wp-cache-config.php
 cgi-bin/
 sftp-config.json
 phpinfo.php
+bb.sh
+.vim*
+
+*.swp
+*.sql

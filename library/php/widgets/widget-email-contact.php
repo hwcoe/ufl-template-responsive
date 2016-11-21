@@ -70,9 +70,8 @@ if (isset($_POST['submitted'])) {
             $headers = 'MIME-Version: 1.0' . "\r\n";
             $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
             $headers .= 'From: ' . $mailFromName . '<' . $mailFrom . '>' . "\r\n";
-            $headers .= 'Bcc: webmaster@eng.ufl.edu' . "\r\n";  //switch to current site webmaster email
-
-
+            // $headers .= 'Bcc: '. get_option('admin_email') . "\r\n";  //current site webmaster email
+        
             // if (filter_var($_POST['emailFrom'], FILTER_VALIDATE_EMAIL)) { mail($email_to_add, $subject, $body, $headers); }
             wp_mail($email_to_add, $subject, $body, $headers);
 
