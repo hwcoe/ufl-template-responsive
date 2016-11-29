@@ -421,19 +421,6 @@ a.rsswidget {
 	padding-left: 0;
 }
 
-.sidebar_widget .news-announcements .item h4,
-.sidebar_widget .news-announcements .item h4 a,
-.sidebar_widget .news-announcements .item h3,
-.sidebar_widget .news-announcements .item h4 a {
-	padding-left: 0;
-	clear: left;
-	padding-top: 0;
-	margin-bottom: .4em;
-}
-
-#sidebar-nav .sidebar_widget {
-}
-
 #sidebar-nav .widget-first {
 	margin-top: 0;
 }
@@ -452,6 +439,24 @@ a.rsswidget {
 .sidebar_widget .item img {
 	padding: 4px;
 	background-color: $white;
+}
+#sidebar-nav .sidebar_widget a.button {
+	background-color: $orange;
+	padding: 10px 30px;
+	display: inline-block;
+	&:hover, &:active {
+		background-color: $med-orange;
+		text-decoration: none;
+	}
+}
+.sidebar_widget .news-announcements .item h4,
+.sidebar_widget .news-announcements .item h4 a,
+.sidebar_widget .news-announcements .item h3,
+.sidebar_widget .news-announcements .item h4 a {
+	padding-left: 0;
+	clear: left;
+	padding-top: 0;
+	margin-bottom: .4em;
 }
 
 .tagcloud {
@@ -484,9 +489,6 @@ a.rsswidget {
 
 .tagcloud a {
 	padding: 3px;
-}
-
-.sidebar_widget #events h4 {
 }
 
 .sidebar_widget #events .month {
