@@ -1084,9 +1084,6 @@ if ( ! isset( $content_width ) ) $content_width = 621;
 // Disables all core updates: 
 	define( 'WP_AUTO_UPDATE_CORE', false ); 
 
-// Include theme info and update notification related functions.
-include_once( 'library/php/update-notifier.php' );
-
 // Include Shibboleth related functions.
 include_once( 'library/php/functions-shibboleth.php' );
 add_filter( 'send_email_change_email', '__return_false' ); // disable sending of 'email changed' message when email is updated to UF Directory email upon login

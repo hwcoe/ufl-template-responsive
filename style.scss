@@ -1,10 +1,10 @@
 /*!
 Theme Name: UF/Gator Engineering Template Responsive
-Theme URI: http://www.ufl.edu/
-Description: The official responsive WordPress template for The University of Florida College of Engineering
+Theme URI: https://www.eng.ufl.edu/
+Description: The official responsive WordPress template for The Herbert Wertheim College of Engineering
 Version: 1.5
-Author: UF Web Services
-Author URI: http://webservices.it.ufl.edu/
+Author: Herbert Wertheim College of Engineering Marketing & Communications
+Author URI: https://www.eng.ufl.edu/marcom/
 Built using style.scss and its imports
 */
 
@@ -46,8 +46,4 @@ Built using style.scss and its imports
 
 // import primary navigation
  @import 'library/scss/_primary-nav';
-
-// import navigation
-//not sure if we need this import since its output file is included as the default in functions.php
-// @import 'library/scss/navigation';
  

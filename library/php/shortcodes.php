@@ -285,28 +285,32 @@ function ufandshands_readRss($atts) {
 		$rss_items = $rss->get_items(0, $maxitems); 
 	endif;
 
-	$rss_widget_output = "<ul>";
+	
+
+	$rss_widget_output = "<div class=\"display-posts-listing\">";
 
 	if ($maxitems == 0) {
-		$rss_widget_output .= '<li>No items.</li>'; }
+		$rss_widget_output .= '<p>No items.</p>'; }
 	else {
 		// Loop through each feed item and display each item as a hyperlink.
 		foreach ( $rss_items as $item ) : 
-		$rss_widget_output .= "<li><a href=\"".$item->get_permalink()."\" title=\"Posted: ".$item->get_date('j F Y | g:i a')."\" >";
+		$rss_widget_output .= "<div class=\"entry\">";
+		$rss_widget_output .= "<h2><a href=\"".$item->get_permalink()."\" title=\"Posted: ".$item->get_date('j F Y | g:i a')."\" >";
 		$rss_widget_output .= $item->get_title();
-		$rss_widget_output .="</a>";
+		$rss_widget_output .="</a></h2>";
 		if( $date=='true' ){
-			$rss_widget_output .= "<br /><span class='rss-date'>".$item->get_date('F j, Y')."</span>";
+			$rss_widget_output .= "<p class=\"published\">".$item->get_date('F j, Y')."</p>";
 		}
 		if($summary=="true") {
-			$rss_widget_output .= "<p>".$item->get_description()."</p>";
+			// $rss_widget_output .= "<p>".$item->get_description()."</p>";
+			$rss_widget_output .= $item->get_description();
 		}
 		
-		$rss_widget_output .= "</li>";
+		$rss_widget_output .= "</div>";
 		endforeach; 
 	}
 	
-	$rss_widget_output .= "</ul>";
+	$rss_widget_output .= "</div>";
 
 	return $rss_widget_output;
 }
