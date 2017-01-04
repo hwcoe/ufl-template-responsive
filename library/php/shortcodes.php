@@ -2,7 +2,6 @@
 /*-----------------------------------------------------------------------------------*/
 /*	Custom ShortCodes
 /*-----------------------------------------------------------------------------------*/
-//include_once('shortcode-people-listing.php');
 include_once('shortcode-subpage-peek.php');
 include_once('shortcode-attachment-list.php');
 include_once('shortcode-tabbed-nav-menu.php');
