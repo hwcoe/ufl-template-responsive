@@ -302,7 +302,7 @@ function ufandshands_readRss($atts) {
 		}
 		if($summary=="true") {
 			// $rss_widget_output .= "<p>".$item->get_description()."</p>";
-			$rss_widget_output .= $item->get_description();
+			$rss_widget_output .= "<p>".$item->get_description()."</p>";
 		}
 		
 		$rss_widget_output .= "</div>";
