@@ -19,7 +19,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # Sass
-.sass-cache/
+/.sass-cache/
 *.css.map
 *.scssc
 
