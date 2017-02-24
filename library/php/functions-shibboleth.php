@@ -22,7 +22,7 @@ if ( !function_exists('is_uf_email') ) {
 function ufl_shibboleth_valid_user() {
 	if ( is_uf_email($_SERVER['REMOTE_USER']) ) {
 		return true;
-	} elseif ( is_uf_email($_SERVER['REDIRECT_REMOTE_USER']) ) {
+	} elseif ( is_uf_email($_SERVER['REDIRECT_UFShib_eppn']) ) {
 		return true;
 	}
 }
