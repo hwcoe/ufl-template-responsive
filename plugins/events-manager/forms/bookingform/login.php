@@ -5,21 +5,19 @@
 ?>
 <div class="em-booking-login">
 	<form class="em-booking-login-form" action="<?php echo site_url('wp-login.php', 'login_post'); ?>" method="post">
-	<p><?php esc_html_e('Log in if you already have an account with us.','dbem'); ?></p>
+	<p><?php esc_html_e('Log in if you already have an account with us.','events-manager'); ?></p>
     <p>
-		<label><?php esc_html_e( 'Username','dbem' ) ?></label>
+		<label><?php esc_html_e( 'Username','events-manager') ?></label>
 		<input type="text" name="log" class="input" value="" />
 	</p>
 	<p>
-		<label><?php esc_html_e( 'Password','dbem' ) ?></label>
+		<label><?php esc_html_e( 'Password','events-manager') ?></label>
 		<input type="password" name="pwd" class="input" value="" />
     </p>
-
 	<p><a href="<?php echo site_url('wp-login.php?redirect_to=' . esc_url($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']) . '&action=shibboleth', 'login') ?>" title="<?php esc_html_e('Login with Gatorlink account', 'dbem') ?>"><?php esc_html_e('Login with GatorLink', 'dbem') ?></a></p>
 
-    <?php //do_action('login_form'); ?>
-	<input type="submit" name="wp-submit" id="em_wp-submit" value="<?php esc_html_e('Log In', 'dbem'); ?>" tabindex="100" />
-	<input name="rememberme" type="checkbox" id="em_rememberme" value="forever" /> <label><?php esc_html_e( 'Remember Me','dbem' ) ?></label>
+    <input type="submit" name="wp-submit" id="em_wp-submit" value="<?php esc_html_e('Log In', 'events-manager'); ?>" tabindex="100" />
+	<input name="rememberme" type="checkbox" id="em_rememberme" value="forever" /> <label><?php esc_html_e( 'Remember Me','events-manager') ?></label>
 	<input type="hidden" name="redirect_to" value="<?php echo esc_url($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']); ?>#em-booking" />
 	<br />
 	<?php
@@ -34,10 +32,10 @@
 			$register_link = site_url('wp-login.php?action=register', 'login');
 		}
 		?>
-		<a href="<?php echo $register_link ?>"><?php esc_html_e('Sign Up','dbem') ?></a>&nbsp;&nbsp;|&nbsp;&nbsp; 
+		<a href="<?php echo $register_link ?>"><?php esc_html_e('Sign Up','events-manager') ?></a>&nbsp;&nbsp;|&nbsp;&nbsp; 
 		<?php
 	}
 	?>	                    
-	<p><a href="<?php echo site_url('wp-login.php?action=lostpassword', 'login') ?>" title="<?php esc_html_e('Password Lost and Found', 'dbem') ?>"><?php esc_html_e('Lost your password?', 'dbem') ?></a></p>
+	<a href="<?php echo site_url('wp-login.php?action=lostpassword', 'login') ?>" title="<?php esc_html_e('Password Lost and Found', 'events-manager') ?>"><?php esc_html_e('Lost your password?', 'events-manager') ?></a>                        
   </form>
 </div>
