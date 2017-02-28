@@ -15,7 +15,7 @@
 		<input type="password" name="pwd" class="input" value="" />
     </p>
 	<p><a href="<?php echo site_url('wp-login.php?redirect_to=' . esc_url($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']) . '&action=shibboleth', 'login') ?>" title="<?php esc_html_e('Login with Gatorlink account', 'dbem') ?>"><?php esc_html_e('Login with GatorLink', 'dbem') ?></a></p>
-
+	
     <input type="submit" name="wp-submit" id="em_wp-submit" value="<?php esc_html_e('Log In', 'events-manager'); ?>" tabindex="100" />
 	<input name="rememberme" type="checkbox" id="em_rememberme" value="forever" /> <label><?php esc_html_e( 'Remember Me','events-manager') ?></label>
 	<input type="hidden" name="redirect_to" value="<?php echo esc_url($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']); ?>#em-booking" />

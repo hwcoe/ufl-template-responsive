@@ -9,7 +9,7 @@ global $EM_Event, $EM_Notices, $bp;
 //check that user can access this page
 if( is_object($EM_Event) && !$EM_Event->can_manage('edit_events','edit_others_events') ){
 	?>
-	<div class="wrap"><h2><?php esc_html_e('Unauthorized Access','dbem'); ?></h2><p><?php echo sprintf(__('You do not have the rights to manage this %s.','dbem'),__('Event','dbem')); ?></p></div>
+	<div class="wrap"><h2><?php esc_html_e('Unauthorized Access','events-manager'); ?></h2><p><?php echo sprintf(__('You do not have the rights to manage this %s.','events-manager'),__('Event','events-manager')); ?></p></div>
 	<?php
 	return false;
 }elseif( !is_object($EM_Event) ){
@@ -27,28 +27,28 @@ if( !empty($_REQUEST['success']) ){
 	<div class="wrap">
 		<?php do_action('em_front_event_form_header'); ?>
 		<?php if(get_option('dbem_events_anonymous_submissions') && !is_user_logged_in()): ?>
-			<h3 class="event-form-submitter"><?php esc_html_e( 'Your Details', 'dbem' ); ?></h3>
+			<h3 class="event-form-submitter"><?php esc_html_e( 'Your Details', 'events-manager'); ?></h3>
 			<div class="inside event-form-submitter">
 				<p>
-					<label><?php esc_html_e('Name', 'dbem'); ?></label>
+					<label><?php esc_html_e('Name', 'events-manager'); ?></label>
 					<input type="text" name="event_owner_name" id="event-owner-name" value="<?php echo esc_attr($EM_Event->event_owner_name); ?>" />
 				</p>
 				<p>
-					<label><?php esc_html_e('Email', 'dbem'); ?></label>
+					<label><?php esc_html_e('Email', 'events-manager'); ?></label>
 					<input type="text" name="event_owner_email" id="event-owner-email" value="<?php echo esc_attr($EM_Event->event_owner_email); ?>" />
 				</p>
-				<?php do_action('em_font_event_form_guest'); ?>
+				<?php do_action('em_front_event_form_guest'); ?>
 			</div>
 		<?php endif; ?>
-		<h3 class="event-form-name"><?php esc_html_e( 'Event Name', 'dbem' ); ?><?php echo $required; ?></h3>
+		<h3 class="event-form-name"><?php esc_html_e( 'Event Name', 'events-manager'); ?><?php echo $required; ?></h3>
 		<div class="inside event-form-name">					
 			<input type="text" name="event_name" id="event-name" value="<?php echo esc_attr($EM_Event->event_name,ENT_QUOTES); ?>" />
-			<p><em><?php esc_html_e('Example: Information Session', 'dbem'); ?></em></p>
+			<p><em><?php esc_html_e('Example: Information Session', 'events-manager'); ?></em></p>
 			<?php em_locate_template('forms/event/group.php',true); ?>
 
 		</div>
 					
-		<h3 class="event-form-when"><?php esc_html_e( 'Date and Time', 'dbem' ); ?></h3>
+		<h3 class="event-form-when"><?php esc_html_e( 'Date and Time', 'events-manager'); ?></h3>
 		<div class="inside event-form-when">
 		<?php 
 			if( empty($EM_Event->event_id) && $EM_Event->can_manage('edit_recurring_events','edit_others_recurring_events') && get_option('dbem_recurrence_enabled') ){
@@ -62,20 +62,20 @@ if( !empty($_REQUEST['success']) ){
 		</div>
 
 		<?php if( get_option('dbem_locations_enabled') ): ?>
-		<h3 class="event-form-where"><?php esc_html_e( 'Location', 'dbem' ); ?></h3>
+		<h3 class="event-form-where"><?php esc_html_e( 'Location', 'events-manager'); ?></h3>
 		<div class="inside event-form-where">
 		<?php em_locate_template('forms/event/location.php',true); ?>
 		</div>
 		<?php endif; ?>
 		
-		<h3 class="event-form-details"><?php esc_html_e( 'Details', 'dbem' ); ?></h3>
+		<h3 class="event-form-details"><?php esc_html_e( 'Details', 'events-manager'); ?></h3>
 		<div class="inside event-form-details">
 			<div class="event-editor">
 				<?php if( get_option('dbem_events_form_editor') && function_exists('wp_editor') ): ?>
 					<?php wp_editor($EM_Event->post_content, 'em-editor-content', array('textarea_name'=>'content') ); ?> 
 				<?php else: ?>
 					<textarea name="content" rows="10"><?php echo $EM_Event->post_content ?></textarea>
-					<p><em><?php esc_html_e( 'Details about the event.', 'dbem' )?> <?php esc_html_e( 'HTML allowed.', 'dbem' )?></em></p>
+					<p><em><?php esc_html_e( 'Details about the event.', 'events-manager')?> <?php esc_html_e( 'HTML allowed.', 'events-manager')?></em></p>
 				<?php endif; ?>
 			</div>
 			<div class="event-extra-details">
@@ -85,7 +85,7 @@ if( !empty($_REQUEST['success']) ){
 		</div>
 		
 		<?php if( $EM_Event->can_manage('upload_event_images','upload_event_images') ): ?>
-		<h3><?php esc_html_e( 'Event Image', 'dbem' ); ?></h3>
+		<h3><?php esc_html_e( 'Event Image', 'events-manager'); ?></h3>
 		<div class="inside event-form-image">
 			<?php em_locate_template('forms/event/featured-image-public.php',true); ?>
 		</div>
@@ -93,7 +93,7 @@ if( !empty($_REQUEST['success']) ){
 		
 		<?php if( get_option('dbem_rsvp_enabled') && $EM_Event->can_manage('manage_bookings','manage_others_bookings') ) : ?>
 		<!-- START Bookings -->
-		<h3><?php esc_html_e('Bookings/Registration','dbem'); ?></h3>
+		<h3><?php esc_html_e('Bookings/Registration','events-manager'); ?></h3>
 		<div class="inside event-form-bookings">				
 			<?php em_locate_template('forms/event/bookings.php',true); ?>
 		</div>
@@ -103,8 +103,13 @@ if( !empty($_REQUEST['success']) ){
 		<?php do_action('em_front_event_form_footer'); ?>
 	</div>
 	<p class="submit">
-		<input type="submit" name="events_update" value="<?php esc_attr_e( 'Submit Event', 'dbem' ); ?> &raquo;" />
+	    <?php if( empty($EM_Event->event_id) ): ?>
+	    <input type='submit' class='button-primary' value='<?php echo esc_attr(sprintf( __('Submit %s','events-manager'), __('Event','events-manager') )); ?>' />
+	    <?php else: ?>
+	    <input type='submit' class='button-primary' value='<?php echo esc_attr(sprintf( __('Update %s','events-manager'), __('Event','events-manager') )); ?>' />
+	    <?php endif; ?>
 	</p>
+	
 	<input type="hidden" name="event_id" value="<?php echo $EM_Event->event_id; ?>" />
 	<input type="hidden" name="_wpnonce" value="<?php echo wp_create_nonce('wpnonce_event_save'); ?>" />
 	<input type="hidden" name="action" value="event_save" />
