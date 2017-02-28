@@ -33,7 +33,7 @@
 				<div class="clear"></div>
 				<?php if( $bookings_count > 0 ): ?>
 				<div class='table-wrap'>
-				<table id='events-manager-bookings-table' class='widefat post fixed'>
+				<table id='dbem-bookings-table' class='widefat post fixed'>
 					<thead>
 						<tr>
 							<th class='manage-column' scope='col'><?php _e('Event', 'events-manager'); ?></th>
@@ -56,7 +56,7 @@
 								?>
 								<tr>
 									<td><?php echo $EM_Event->output("#_EVENTLINK"); ?></td>
-									<td><?php echo date_i18n( get_option('events-manager_date_format'), $EM_Event->start ); ?></td>
+									<td><?php echo date_i18n( get_option('dbem_date_format'), $EM_Event->start ); ?></td>
 									<td><?php echo $EM_Booking->get_spaces() ?></td>
 									<td>
 										<?php echo $EM_Booking->get_status(); ?>
@@ -64,7 +64,7 @@
 									<td>
 										<?php
 										$cancel_link = '';
-										if( !in_array($EM_Booking->booking_status, array(2,3)) && get_option('events-manager_bookings_user_cancellation') && $EM_Event->get_bookings()->has_open_time() ){
+										if( !in_array($EM_Booking->booking_status, array(2,3)) && get_option('dbem_bookings_user_cancellation') && $EM_Event->get_bookings()->has_open_time() ){
 											$cancel_url = em_add_get_params($_SERVER['REQUEST_URI'], array('action'=>'booking_cancel', 'booking_id'=>$EM_Booking->booking_id, '_wpnonce'=>$nonce));
 											$cancel_link = '<a class="em-bookings-cancel" href="'.$cancel_url.'" onclick="if( !confirm(EM.booking_warning_cancel) ){ return false; }">'.__('Cancel','events-manager').'</a>';
 										}
