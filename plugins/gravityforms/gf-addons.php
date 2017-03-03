@@ -30,4 +30,11 @@ function set_chosen_options($form){
 
 add_action("gform_pre_render", "set_chosen_options");
 
+function maintenance_mode( $form_string, $form ) {
+    $form_string = '<p>Forms have been temporarily disabled for scheduled maintenance. Please check back later.</p>';
+
+    return $form_string;
+}
+// add_filter( 'gform_get_form_filter', 'maintenance_mode', 10, 2 );
+
 ?>

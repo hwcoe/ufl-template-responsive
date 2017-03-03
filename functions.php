@@ -451,9 +451,15 @@ function remove_featured_image_field() {
 /* 	Gravity Forms custom code and enhancements
 /* ----------------------------------------------------------------------------------- */
 
-if ( class_exists( 'GFCommon' ) && file_exists('plugins/gravityforms/gf-addons.php')) {
+// is not being loaded on main site - file_exists condition is not being met
+// if ( class_exists( 'GFCommon' ) && file_exists('plugins/gravityforms/gf-addons.php')) {
+//     include ('plugins/gravityforms/gf-addons.php');	
+// }
+
+if ( class_exists( 'GFCommon' )) {
     include ('plugins/gravityforms/gf-addons.php');	
 }
+
 /* ----------------------------------------------------------------------------------- */
 /* 	Search Text
 /* ----------------------------------------------------------------------------------- */
