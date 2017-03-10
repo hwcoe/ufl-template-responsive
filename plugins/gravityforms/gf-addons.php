@@ -30,6 +30,7 @@ function set_chosen_options($form){
 
 add_action("gform_pre_render", "set_chosen_options");
 
+// Gravity Forms maintenance mode - uncomment to use
 function maintenance_mode( $form_string, $form ) {
     $form_string = '<p>Forms have been temporarily disabled for scheduled maintenance. Please check back later.</p>';
 
