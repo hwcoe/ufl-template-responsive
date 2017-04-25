@@ -61,14 +61,14 @@ $custom_responsive_css = of_get_option('opt_responsive_css');
 <body <?php body_class($class); ?>>
 	<div id="full-modal"></div>
 		<ul class="screen-reader-text">
-			<li><a href="http://assistive.usablenet.com/tt/<?php if (is_home()) { echo esc_url(home_url()); } else { echo esc_url(get_permalink( $post->ID )); } ?>" accesskey="t" title="Text-only version of this website">Text-only version of this website</a></li>
 			<li><a href="#content" accesskey="s" title="Skip navigation">Skip navigation</a></li>
 			<li><a href="<?php bloginfo( 'url' ); ?>" accesskey="1" title="Home page">Home page</a></li>
 			<li><a href="<?php bloginfo( 'url' ); ?>/#secondary" accesskey="2" title="what's new">What's new</a></li>
 			<li><a href="#search" accesskey="4" title="Search">Search</a></li>
-			<?php $webmaster_email = of_get_option("opt_webmaster_email"); if( !empty($webmaster_email) && ufl_check_email_address($webmaster_email) ) { echo "<li><a id=\"contact-webmaster-srt\" accesskey=\"6\" href=\"mailto:".$webmaster_email."\">Contact Webmaster</a></li> "; } else { echo "<li><a id=\"contact-webmaster-srt\" accesskey=\"6\" href=\"".$webmaster_email."\">Contact Webmaster</a></li> "; } ?>
-			<li><a href="#footer-links" accesskey="8" title="Website policies">Website policies</a></li>
+			<li><?php $webmaster_email = of_get_option("opt_webmaster_email"); if( !empty($webmaster_email) && ufl_check_email_address($webmaster_email) ) { echo "<a id=\"contact-webmaster-srt\" accesskey=\"6\" href=\"mailto:".$webmaster_email."\">Contact Webmaster</a>"; } else { echo "<a id=\"contact-webmaster-srt\" accesskey=\"6\" href=\"".$webmaster_email."\">Contact Webmaster</a>"; } ?></li>
+			<li><a href="#institutional-footer" accesskey="8" title="Contact Information">Contact Information</a></li>
 			<li><a href="http://www.ufl.edu/disability/" accesskey="0" title="Disability services">Disability services</a></li>
+			<li><a href="http://assistive.usablenet.com/tt/<?php if (is_home()) { echo esc_url(home_url()); } else { echo esc_url(get_permalink( $post->ID )); } ?>" accesskey="t" title="Text-only version of this website">Text-only version of this website</a></li>
 		</ul>
 	
   <?php
