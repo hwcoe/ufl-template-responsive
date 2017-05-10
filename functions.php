@@ -1087,7 +1087,7 @@ function ufl_check_email_address($email) {
 if ( ! isset( $content_width ) ) $content_width = 621;
 
 // Disables all core updates: 
-	define( 'WP_AUTO_UPDATE_CORE', false ); 
+	// define( 'WP_AUTO_UPDATE_CORE', false ); 
 
 // Include Shibboleth related functions.
 include_once( 'library/php/functions-shibboleth.php' );
