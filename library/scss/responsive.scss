@@ -478,9 +478,9 @@ right:0;
 }
 .flexslider{
 		margin-bottom:0px;
-}
-.flexslider a:link{ 
-	-webkit-tap-highlight-color: transparent;
+		a:link{ 
+			-webkit-tap-highlight-color: transparent;
+		}
 }
 
 .flex-caption {
@@ -977,10 +977,10 @@ right:0;
 /* Responsive styles for tablets and smaller devices */
 @media screen and (max-width: 1024px){
 	#institutional-nav {
-			z-index: auto;
+		z-index: auto;
 	}
 	#inst-logo a{
-			display: none;
+		display: none;
 	}
 }
 
@@ -991,10 +991,10 @@ right:0;
 		padding:0 !important;
 	}
 	.flex-direction-nav {
-			display:none;
+		display:none;
 	}
 	.flex-caption h3 {
-			font-size:1.6em !important;
+		font-size:1.6em !important;
 	}
 	.span-5, .span-6, .span-7, .span-7half, 
 	.span-8, .span-9, .span-10, .span-11,
@@ -1015,6 +1015,33 @@ right:0;
 	}
 	.display-posts-listing {
 		padding: 0 1.5em 0 0.5em;
+	}
+}
+//tablets on portrait
+@include breakpoint (view-med) {
+	.container {
+		width:100% !important;
+		padding:0 !important;
+	}
+	.flex-direction-nav {
+		display:none;
+	}
+	.span-5, .span-6, .span-7, .span-7half, 
+	.span-8, .span-9, .span-10, .span-11,
+	.span-12, .span-13, .span-14, .span-15, 
+	.span-16, .span-17, .span-18, .span-19, .span-20, 
+	.span-21, .span-22, .span-23, .span-24 {
+		width:100% !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	#featurebox-footer {
+		.widget {
+			padding:0 !important;
+			margin: 0 !important;
+		}
 	}
 }
 
