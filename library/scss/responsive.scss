@@ -944,7 +944,7 @@ right:0;
 		line-height: 2em;
 	}
 	ul {
-		margin: 1em 0;
+		margin: 1em;
 	}
 	li {
 		line-height: 1.5em;
@@ -1041,6 +1041,12 @@ right:0;
 		.widget {
 			padding:0 !important;
 			margin: 0 !important;
+		}
+	}
+	#institutional-footer {
+		ul {
+			margin: 1em auto;
+			width:50%;
 		}
 	}
 }
