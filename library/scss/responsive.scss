@@ -18,7 +18,7 @@ body{
 	width:100% !important;
 	overflow:hidden;
 }
-img{
+img {
 		max-width: 100% !important;
 		height:auto !important;
 }
@@ -31,11 +31,16 @@ iframe{
 .span-12, .span-13, .span-14, .span-15, 
 .span-16, .span-17, .span-18, .span-19, .span-20, 
 .span-21, .span-22, .span-23, .span-24 {
- 	width:80% !important;
-	padding-left: 0 !important;
-	padding-right: 0 !important;
-	margin-left: 0 !important;
-	margin-right: 0 !important;
+ // 	width:90% !important;
+	// padding-left: 0 !important;
+	// padding-right: 0 !important;
+	// margin-left: 0 !important;
+	// margin-right: 0 !important;
+	width:100%;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
 }
 h1,h2,h3,h4,h6,p{
 	padding: 0 5px;
@@ -533,7 +538,7 @@ right:0;
 }
 
 /* SIDEBAR NAVIGATION */
-#sidebar-nav{
+#sidebar-nav, #local-sidebar {
 	background: $white;
 	height:100%;
 	width: 100%;
@@ -616,17 +621,12 @@ right:0;
 #secondary.homepage_layout_white .news-announcements{
 	border-bottom: none;
 }
-
-.widget {
-		padding: 8px !important;
-		margin:0 !important;
-}
 .widget img{
 		max-width: 96% !important;
 		padding:0px !important;
 }
-.featurebox_footer_widget {
-	margin: 0 20px 20px 20px !important;
+#featurebox-footer section {
+	margin: 0 20px 20px 20px;
 }
 .ufl-highlight {
 	background:none;
@@ -1000,7 +1000,8 @@ right:0;
 	.span-8, .span-9, .span-10, .span-11,
 	.span-12, .span-13, .span-14, .span-15, 
 	.span-16, .span-17, .span-18, .span-19, .span-20, 
-	.span-21, .span-22, .span-23, .span-24 {
+	.span-21, .span-22, .span-23, .span-24,
+	.footer_widget {
 		width:100% !important;
 		padding-left: 0 !important;
 		padding-right: 0 !important;
@@ -1016,6 +1017,10 @@ right:0;
 	.display-posts-listing {
 		padding: 0 1.5em 0 0.5em;
 	}
+	#secondary .widget {
+		padding: 8px !important;
+		margin:0 !important;
+	}
 }
 //tablets on portrait
 @include breakpoint (view-med) {
@@ -1026,27 +1031,21 @@ right:0;
 	.flex-direction-nav {
 		display:none;
 	}
-	.span-5, .span-6, .span-7, .span-7half, 
-	.span-8, .span-9, .span-10, .span-11,
-	.span-12, .span-13, .span-14, .span-15, 
-	.span-16, .span-17, .span-18, .span-19, .span-20, 
-	.span-21, .span-22, .span-23, .span-24 {
-		width:100% !important;
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-		margin-left: 0 !important;
-		margin-right: 0 !important;
-	}
-	#featurebox-footer {
-		.widget {
-			padding:0 !important;
-			margin: 0 !important;
+	#secondary, #featurebox-footer, footer {
+
+		.span-5, .span-6, .span-7, .span-7half, 
+		.span-8, .span-9, .span-10, .span-11,
+		.span-12, .span-13, .span-14, .span-15, 
+		.span-16, .span-17, .span-18, .span-19, .span-20, 
+		.span-21, .span-22, .span-23, .span-24,
+		.footer_widget {
+			width:48% !important;
+			margin-right: 0 !important;
 		}
 	}
-	#institutional-footer {
-		ul {
-			margin: 1em auto;
-			width:50%;
+	#featurebox-footer {
+		section {
+			margin: 0 10px 20px 10px;
 		}
 	}
 }
