@@ -68,7 +68,7 @@ $custom_responsive_css = of_get_option('opt_responsive_css');
 			<li><?php $webmaster_email = of_get_option("opt_webmaster_email"); if( !empty($webmaster_email) && ufl_check_email_address($webmaster_email) ) { echo "<a id=\"contact-webmaster-srt\" accesskey=\"6\" href=\"mailto:".$webmaster_email."\">Contact Webmaster</a>"; } else { echo "<a id=\"contact-webmaster-srt\" accesskey=\"6\" href=\"".$webmaster_email."\">Contact Webmaster</a>"; } ?></li>
 			<li><a href="#institutional-footer" accesskey="8" title="Contact Information">Contact Information</a></li>
 			<li><a href="http://www.ufl.edu/disability/" accesskey="0" title="Disability services">Disability services</a></li>
-			<li><a href="http://assistive.usablenet.com/tt/<?php if (is_home()) { echo esc_url(home_url()); } else { echo esc_url(get_permalink( $post->ID )); } ?>" accesskey="t" title="Text-only version of this website">Text-only version of this website</a></li>
+			<li><a href="http://assistive.usablenet.com/tt/<?php if (is_home()) { echo esc_url(home_url()); } else { echo esc_url(get_permalink( $post->ID )); } ?>" accesskey="9" title="Text-only version of this website">Text-only version of this website</a></li>
 		</ul>
 	
   <?php
@@ -89,6 +89,7 @@ $custom_responsive_css = of_get_option('opt_responsive_css');
 		<!-- end website title logic -->
 	
 		<div id="header-search-wrap">
+
 			<?php if(has_nav_menu('header_links')) { //detects if the header_links menu is being used ?>
 			  <nav id="utility-links" class="span-7half" role="navigation">
 				<ul><?php wp_nav_menu( array('theme_location' => 'header_links', 'container' => false )); ?></ul>
@@ -98,7 +99,7 @@ $custom_responsive_css = of_get_option('opt_responsive_css');
 			<?php $opt_search_box_text = of_get_option("opt_search_box_text"); ?>
 			<?php $opt_use_wp_search = of_get_option("opt_use_wp_search"); if(!empty($opt_use_wp_search)) { ?>
 			<form method="get" id="searchform" action="<?php echo home_url('/'); ?>" role="search">
-				<input type="text" value="<?php if (!empty($opt_search_box_text)) { echo $opt_search_box_text; } else { echo 'Search This Site'; }?>" id="header-search-field" name="s" />
+				<input type="text" aria-label="Enter Search Term" value="<?php if (!empty($opt_search_box_text)) { echo $opt_search_box_text; } else { echo 'Search This Site'; }?>" id="header-search-field" name="s" />
 				<input type="image" src="<?php bloginfo('template_url'); ?>/images/header-search-btn-orange.jpg" id="header-search-btn"  alt="Search Button" name="sa" />
 			</form>
 			<?php } else { ?>
@@ -107,7 +108,7 @@ $custom_responsive_css = of_get_option('opt_responsive_css');
 				<?php $opt_site_specific_search = of_get_option("opt_site_specific_search"); if(!empty($opt_site_specific_search)) { ?>
 				<input type="hidden" name="site" id="site" value="<?php $parsed_url = parse_url( home_url() ); echo $parsed_url['host']; if ( $parsed_url['path'] ) { echo $parsed_url['path']; } ?>">
 				<?php } ?>
-				<input type="text" value="<?php if (!empty($opt_search_box_text)) { echo $opt_search_box_text; } else { echo 'Search UF Web'; } ?>" id="header-search-field" name="query" />
+				<input type="text" aria-label="Enter Search Term" value="<?php if (!empty($opt_search_box_text)) { echo $opt_search_box_text; } else { echo 'Search UF Web'; } ?>" id="header-search-field" name="query" />
 				<input type="image" src="<?php bloginfo('template_url'); ?>/images/header-search-btn.png" id="header-search-btn"  alt="Search Button" name="sa" />
 			</form>
 			<?php } ?>

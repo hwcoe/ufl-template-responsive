@@ -49,24 +49,27 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 						} else {
 							echo "Gainesville, FL 32611-6550<br />";
 						}
+						
 
 						$contact_phone = of_get_option("opt_contact_phone");
 						if (!empty($contact_phone)) {
-							echo "Phone: " . $contact_phone . "<br /><a href=\"https://www.eng.ufl.edu/about/contact/\">Full list of office phone numbers</a><br />";
+							echo "Phone: " . $contact_phone . "<br /><a href=\"https://www.eng.ufl.edu/about/contact/\">Full list of office phone numbers</a>";
 						} else {
-							echo "<a href=\"https://www.eng.ufl.edu/about/contact/\">List of office phone numbers</a><br />";
+							echo "<a href=\"https://www.eng.ufl.edu/about/contact/\">List of office phone numbers</a>";
 						}
 
 						$contact_fax = of_get_option("opt_contact_fax");
 						if (!empty($contact_fax)) {
-							echo "Fax: " . $contact_fax . "</p>";
+							echo "<br />Fax: " . $contact_fax;
 						}
+						echo "</p>";
+						echo "<p>";
 
 						$contact_email = of_get_option("opt_contact_email");
 						if ( !empty($contact_email) && ufl_check_email_address($contact_email) ) { 
-							echo "<p><a href=\"mailto:" . $contact_email . "\">" . $contact_email . "</a><br />";
+							echo "<a href=\"mailto:" . $contact_email . "\">" . $contact_email . "</a><br />";
 						} else {
-							echo "<p><a href=\"mailto:info@eng.ufl.edu\">info@eng.ufl.edu</a><br />";
+							echo "<a href=\"mailto:info@eng.ufl.edu\">info@eng.ufl.edu</a><br />";
 						}
 					 
 						$webmaster_email = of_get_option("opt_webmaster_email"); 
@@ -80,6 +83,7 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 							echo "mailto:webmaster@eng.ufl.edu";
 						}
 						echo "\">Contact webmaster</a>";
+						echo "</p>";
 
 					?>
 					</address>
