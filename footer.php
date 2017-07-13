@@ -50,18 +50,19 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 							echo "Gainesville, FL 32611-6550<br />";
 						}
 						
-
 						$contact_phone = of_get_option("opt_contact_phone");
-						if (!empty($contact_phone)) {
+						$contact_fax = of_get_option("opt_contact_fax");
+
+						if (!empty($contact_phone) && !empty($contact_fax)) {
+							echo "Phone: " . $contact_phone . "<br />Fax: " . $contact_fax . "<br /><a href=\"https://www.eng.ufl.edu/about/contact/\">Full list of office phone numbers</a>";
+						} else if (!empty($contact_phone)) {
 							echo "Phone: " . $contact_phone . "<br /><a href=\"https://www.eng.ufl.edu/about/contact/\">Full list of office phone numbers</a>";
+						} else if (!empty($contact_fax)) {
+							echo "Fax: " . $contact_fax . "<br /><a href=\"https://www.eng.ufl.edu/about/contact/\">Full list of office phone numbers</a>";
 						} else {
 							echo "<a href=\"https://www.eng.ufl.edu/about/contact/\">List of office phone numbers</a>";
 						}
 
-						$contact_fax = of_get_option("opt_contact_fax");
-						if (!empty($contact_fax)) {
-							echo "<br />Fax: " . $contact_fax;
-						}
 						echo "</p>";
 						echo "<p>";
 
