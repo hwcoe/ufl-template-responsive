@@ -1,4 +1,4 @@
-<nav id="institutional-nav" class="white" role="navigation">
+<nav id="institutional-nav" class="white">
   <ul id="top" class="container">
   <?php
 		if ( is_main_site($blog_id) ) { ?>

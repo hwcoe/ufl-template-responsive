@@ -89,7 +89,7 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 					?>
 					</address>
 	 			</div>
-	 			<div class="footer-links span-6">
+	 			<nav class="footer-links span-6">
 	 				<ul>
 						<li><a href="<?php echo home_url(); ?>">Home</a></li>
 						<?php wp_list_pages('title_li=&depth=1'); ?>
@@ -97,8 +97,7 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 						<?php $intranet_url = of_get_option("opt_intranet_url"); if(!empty($intranet_url)) { echo "<li><a href=\"".$intranet_url."\">Intranet</a></li> ";} ?>
 						
 					</ul>
-
-	 			</div>
+	 			</nav>
 
 	 			<div class="footer-links ads span-5">
 	 				<ul>

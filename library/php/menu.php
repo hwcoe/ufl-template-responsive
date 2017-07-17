@@ -5,7 +5,7 @@
 // menu 2 - mega menu with 3 levels deep
 // menu 3 - ubermenu with complete control 
 
-echo "<nav id='primary-nav' class='white' role='navigation'>";
+echo "<nav id='primary-nav' class='white'>";
 
 $mega_menu = of_get_option("opt_mega_menu");
 $ufl_menu = of_get_option("opt_ufl_menu");

@@ -91,7 +91,7 @@ $custom_responsive_css = of_get_option('opt_responsive_css');
 		<div id="header-search-wrap">
 
 			<?php if(has_nav_menu('header_links')) { //detects if the header_links menu is being used ?>
-			  <nav id="utility-links" class="span-7half" role="navigation">
+			  <nav id="utility-links" class="span-7half">
 				<ul><?php wp_nav_menu( array('theme_location' => 'header_links', 'container' => false )); ?></ul>
 			  </nav>
 			<?php } ?>

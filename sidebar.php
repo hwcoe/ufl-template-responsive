@@ -7,7 +7,7 @@
 
 <?php if(!empty($ufandshands_sidebar_nav) || !empty($ufandshands_sidebar_widgets)) :  ?>
 
-  <nav id="sidebar-nav" class="span-6" role="navigation">
+  <nav id="sidebar-nav" class="span-6">
 	<div class="shadow"></div>
   <?php if(!empty($ufandshands_sidebar_nav)) : ?>
     <ul class="site-nav" <?php if($ufandshands_sidebar_widgets) {echo "style='margin-bottom:25px;'";} ?>>

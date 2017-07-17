@@ -1,6 +1,6 @@
 <?php if(has_nav_menu('rolebased_nav')) : ?> 
 <div class="ribbon" id="ribbon-user-role-menu"> 
-  <nav id="user-role" role="navigation">
+  <nav id="user-role">
   	<div class="container-5 clearfix">
 
     <?php 
