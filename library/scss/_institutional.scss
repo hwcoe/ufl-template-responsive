@@ -92,6 +92,13 @@
 	p {
 		font-size:0.9em;
 		line-height: 1.25em;
+		a {
+			border-bottom: 1px dotted $dark-blue;
+			&:hover, &:active {
+				text-decoration:none;
+				border-bottom: 1px solid $medium-blue;
+			}
+		}
 	}
 	.container {
 		position: relative;
@@ -148,10 +155,15 @@
 }
 .footer-bottom {
 	background-color:$black-50;
-	color: $black-75;
+	color: $white;
 	font-size: 0.9em;
 	a, a:link, a:active, a:visited {
 		color: $white;
+		border-bottom: 1px dotted $white;
+		&:hover {
+			border-bottom: 1px solid $white;
+			text-decoration:none;
+		}
 	}
 	ul {
 		margin:1em 0 0 0;

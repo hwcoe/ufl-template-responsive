@@ -51,7 +51,7 @@
 		padding-right: 15px;
 	}
 	.widget {
-		background-color: $dark-teal-blue;
+		background-color: $light-medium-blue;
 		margin-top: 15px;
 		padding: 15px;
 		min-width: 0;
@@ -99,11 +99,11 @@ article .widget_body h4 {
 .news-announcements .dateline,
 .widget_body .time,
 .footer_widget .time {
-	color: $light-medium-blue;
+	color: $white;
 	font-size: 0.8em;
 	margin-bottom: 1.2em;
 	margin-top: 4px;
-	border-top: 1px dotted #54649B; 
+	border-top: 1px dotted $light-teal-blue; 
 	padding-top: 2px;
 	padding-bottom: 0;
 }
@@ -302,12 +302,7 @@ a.rsswidget {
 		padding: 0.4em;
 		margin: -0.4em 0 0.4em 0;
 		background-color: $black-75;
-	}
-	h5 {
-		padding: 0;
-		margin: 5px 20px 20px 30px;
-		font-style: italic;
-		background: none;
+		color: $very-dark-blue;
 	}
 	img {
 		width:360px;
