@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
 		// main navigation menu
 		$("#primary-nav").addClass("pri-show");
 		// //create span toggle in pri-show li a
-		$(".pri-show>ul>li.parent>a").prepend('<span class="primary-nav-toggle hide-for-large"><b>Toggle</b></span>');
+		$(".pri-show>ul>li.parent>a").prepend('<span class="primary-nav-toggle">Toggle</span>');
 		$('.primary-nav-toggle').click(function(e) {
 				e.preventDefault();
 
@@ -69,7 +69,7 @@ jQuery(document).ready(function($) {
 	
 // responsive role based menu
 	//create span toggle in user-role h3 a
-	$("#user-role h3 a").prepend('<span class="user-role-toggle hide-for-large"><b>Toggle</b></span>');
+	$("#user-role h3 a").prepend('<span class="user-role-toggle">Toggle</span>');
 	//user role nav
 	$('.user-role-toggle').click(function(e) {
 		e.preventDefault();
