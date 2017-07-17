@@ -97,7 +97,7 @@ class UFCOM_recent_posts extends WP_Widget {
         
         $margin = '';
 					
-				echo "<div id='recent-posts' class='news-announcements'><div class='item'>";
+				echo "<div class='news-announcements'><div class='item'>";
 					if ($showthumbnails) {
 			            if((ufandshands_post_thumbnail('thumbnail', 'alignleft', 150, 150))) {
 			              $margin = "margin-160";
@@ -109,8 +109,6 @@ class UFCOM_recent_posts extends WP_Widget {
 					echo "<h4><a href=\"".get_permalink()."\">".get_the_title()."</a></h4>";
 					if ($showdate){ echo "<p class='time {$margin} {$margin_bottom}'>".get_the_time('M jS, Y')."</p>"; }
 					if ($showexcerpt) { echo "<p>".get_the_excerpt()."</p>"; }
-					//if ($showthumbnails){ echo "<div style=\"clear:right;\"></div>"; } -- disabled -- not sure if needed in new UF&Shands template
-					// echo "<div class=\"recent_post_container_bottom_border\"></div>"; -- disabled -- not sure if needed in new UF&Shands template
 					
 				echo "</div></div>";
 				endwhile;
