@@ -121,20 +121,22 @@ class ufandshands_rolebased_walker extends Walker_Nav_Menu {
 
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
 		$id = strlen( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
-    
+		$menu_header = 'menu-header-'. $item->ID;
+    	$menu_header = esc_attr( $menu_header );
+
     if ($item->menu_item_parent == 0) {
-      $output .= $indent . '<section ' . $id . $value . $class_names . '>';
+      $output .= $indent . '<section ' . $id . $value . $class_names . ' aria-labelledby="' . $menu_header . '">';
     } else {
 		  $output .= $indent . '<li' . $id . $value . $class_names . '>';
 		}
 
-	  $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+	  	$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
 		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
 		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 
 		$item_output = $args->before;
-    if ($item->menu_item_parent == 0) { $item_output .= '<h3>'; }
+    if ($item->menu_item_parent == 0) { $item_output .= '<h3 id="' . $menu_header . '">'; }
 		$item_output .= '<a'. $attributes .'>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= '</a>';
