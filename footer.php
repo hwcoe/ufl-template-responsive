@@ -131,7 +131,7 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 	 	</div> <!-- /container -->
 	 	<div class="footer-bottom">
 	 		<div class="container">
-			 	<a href="http://www.ufl.edu/" class="uf-logo ir">University of Florida</a>
+			 	<a href="http://www.ufl.edu/" class="uf-logo ir" style="border-bottom:none;">University of Florida</a>
 				<ul>
 					<li>&copy; <?php echo date('Y'); ?> <a href="http://www.ufl.edu/">University of Florida</a></li>
 					<?php

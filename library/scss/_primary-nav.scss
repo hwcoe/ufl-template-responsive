@@ -22,7 +22,7 @@ PRIMARY NAVIGATION
 	height: 40px;
 	margin: -4px 0;
 	border-top: 4px solid $white;
-	&:hover {
+	&:hover							 {
 		border-top: 4px solid $orange;
 	}
 	&:active {
@@ -39,6 +39,10 @@ PRIMARY NAVIGATION
 	@include spaced-headline(serif);
 	height: 17px;
 	padding: 9px 12px; 
+	&:focus {
+		text-decoration: underline;
+		outline:$orange solid medium;
+	}
 }
 #primary-nav #home a {
   	border-left: none;

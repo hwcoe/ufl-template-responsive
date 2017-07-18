@@ -51,6 +51,9 @@ article {
 	h4 {
 		text-transform: uppercase;
 	}
+	a:focus {
+		background-color:$very-light-blue;
+	}
 	aside {
 		@extend .sidebar_widget;
 		width:30%;
