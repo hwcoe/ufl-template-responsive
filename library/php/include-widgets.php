@@ -14,7 +14,6 @@ function ufandshands_secondary_widget_area() {
 			
 		} else {
 			echo "<div id='secondary' class='homepage_layout_white' >";
-				//echo "<div id='content-shadow'>";
 		}
 	  
 				echo "<div class='container'>";
@@ -24,78 +23,77 @@ function ufandshands_secondary_widget_area() {
 					switch($homepage_layout) {
 					
 						case "3c-default":
-								echo "<section class='span-12 omega'>";
+								echo "<div class='span-12 omega'>";
 									get_sidebar('home_left');
-								echo "</section>";
+								echo "</div>";
 								
-								echo "<section class='span-6 omega'>";
+								echo "<div class='span-6 omega'>";
 									get_sidebar('home_middle');
-								echo "</section>";
+								echo "</div>";
 								
-								echo "<section class='span-6 omega'>";
+								echo "<div class='span-6 omega'>";
 									get_sidebar('home_right');
-								echo "</section>";
+								echo "</div>";
 							break;
 							
 						case "3c-thirds":
-								echo "<section class='span-8 omega'>";
+								echo "<div class='span-8 omega'>";
 									get_sidebar('home_left');
-								echo "</section>";
+								echo "</div>";
 								
-								echo "<section class='span-8 omega'>";
+								echo "<div class='span-8 omega'>";
 									get_sidebar('home_middle');
-								echo "</section>";
+								echo "</div>";
 								
-								echo "<section class='span-8 omega'>";
+								echo "<div class='span-8 omega'>";
 									get_sidebar('home_right');
-								echo "</section>";
+								echo "</div>";
 							break;
 							
 						case "2c-bias":
-								echo "<section class='span-16 omega'>";
+								echo "<div class='span-16 omega'>";
 									get_sidebar('home_left');
-								echo "</section>";
+								echo "</div>";
 												
-								echo "<section class='span-8 omega'>";
+								echo "<div class='span-8 omega'>";
 									get_sidebar('home_right');
-								echo "</section>";
+								echo "</div>";
 							break;
 							
 						case "2c-half":
-								echo "<section class='span-12 omega'>";
+								echo "<div class='span-12 omega'>";
 									get_sidebar('home_left');
-								echo "</section>";
+								echo "</div>";
 												
-								echo "<section class='span-12 omega'>";
+								echo "<div class='span-12 omega'>";
 									get_sidebar('home_right');
-								echo "</section>";
+								echo "</div>";
 							break;
 							
 						case "1c-100":
-								echo "<section class='span-24'>";
+								echo "<div class='span-24'>";
 									get_sidebar('home_left');
-								echo "</section>";
+								echo "</div>";
 							break;
 							
 						case "1c-100-2c-half":
-								echo "<section class='span-24'>";
+								echo "<div class='span-24'>";
 									get_sidebar('home_left');
-								echo "</section>";
+								echo "</div>";
 
-								echo "<section class='span-12 omega'>";
+								echo "<div class='span-12 omega'>";
 									get_sidebar('home_middle');
-								echo "</section>";
+								echo "</div>";
 												
-								echo "<section class='span-12 omega'>";
+								echo "<div class='span-12 omega'>";
 									get_sidebar('home_right');
-								echo "</section>";
+								echo "</div>";
 							break;
 					}
 					
 					echo "</div>";
 					
 			if(!empty($homepage_layout_color)) {
-				//echo "</div>";
 			} else {
 				echo "<div id='secondary-shadow'></div>";
 			}
