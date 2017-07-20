@@ -61,7 +61,7 @@ class UFCOE_EM_Widget extends WP_Widget {
 		}
 		
 		$events = EM_Events::get(apply_filters('em_widget_events_get_args',$instance));
-		echo "<div id='events'>";
+		echo "<div class=\"events\">";
 		$li_wrap = !preg_match('/^<div class="item">/i', trim($instance['format']));
 		if ( count($events) > 0 ){
 			foreach($events as $event){				

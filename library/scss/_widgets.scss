@@ -83,6 +83,9 @@ article .widget_body h4 {
 		margin-top: 0;
 		padding-top: 4px;
 }
+.footer_widget h4 {
+	color:$very-dark-blue;
+}
 #secondary p,
 .footer_widget p,
 .rssSummary {
@@ -128,11 +131,11 @@ h3 a.rsswidget {
 	display: none;
 }
 
-#events {
+.events {
 	padding-bottom: 10px; 
 }
 
-#events .time {
+.events .time {
 	margin-left: 52px;
 	margin-bottom: 0;
 }
@@ -366,8 +369,8 @@ a.rsswidget {
 #sidebar-post .rss-date {
 	font-size: 0.8em;
 }
-#sidebar-nav .sidebar_widget #events,
-.sidebar_widget #events {
+#sidebar-nav .sidebar_widget .events,
+.sidebar_widget .events {
 	font-size: 0.8em;
 	line-height: 0.8em;
 }
@@ -486,11 +489,11 @@ a.rsswidget {
 	padding: 3px;
 }
 
-.sidebar_widget #events .month {
+.sidebar_widget .events .month {
 	top: 10px;
 }
 
-.sidebar_widget #events .day {
+.sidebar_widget .events .day {
 	top: 25px;
 	display: block;
 	padding-top: 5px;
@@ -513,7 +516,7 @@ a.rsswidget {
 
 /*----- UF Theme-formatted Events List and Google calendar -----*/
 
-#events .event-date {
+.events .event-date {
 	float: left;
 	height: 50px;
 	width: 42px;
@@ -521,28 +524,28 @@ a.rsswidget {
 	margin-right: 10px;
 }
 
-#events .month,
-#events .day {
+.events .month,
+.events .day {
 	position: absolute;
 	width: 41px;
 	text-align: center;
 }
 
-#events .month {
+.events .month {
 	font-size: 0.8em;
 	top: 6px;
 	text-transform: uppercase;
 	color: $white;
 }
 
-#events .day {
+.events .day {
 	font-size: 1.5em;
 	top: 21px;
 	color: $very-dark-blue;
 	font-family: $serif-heavy, Georgia, serif;
 }
 
-#events h4 {
+.events h4 {
 	font-size: 0.9em;
 	margin-left:52px;
 }
