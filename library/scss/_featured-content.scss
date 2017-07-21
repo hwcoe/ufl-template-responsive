@@ -7,22 +7,19 @@
 }
 
 #slideshow {
-		width: 930px;
-		height: auto;
-		overflow: hidden;
-		position: relative;
-		margin: 0 auto;
-}
-#slideshow h3 {
-	font-size: 1.6em;
-	margin-bottom: .4em;
-	text-transform: uppercase;
+	width: 930px;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	h3 {
+		font-size: 1.6em;
+		margin-bottom: .4em;
+		text-transform: uppercase;
+	}
 }
 #slideshow .slide-1 .excerpt {
 	display: block;
-}
-#slideshow .excerpt p {
-max-width:350px;
 }
 
 #slideshow .excerpt {
@@ -32,14 +29,22 @@ max-width:350px;
 	left: 0;
 	width: 320px;
 	padding: 15px 10px 15px 20px;
+	border:2px solid $black-15;
 	display: none;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	p {
+		max-width:350px;
+	}
+	&:hover {
+		border-color: $black-75;
+		background-color:$black;
+	}
 }
 
 /* Half width image feature */
 .half-image-feature {
-	//background: transparent url(images/bg-half-image-feature.png) 2px 0 no-repeat;
 	background-color: $black-70;
-	//border: 3px solid $black-95;
 	img {
 		float: right;
 		border: 5px solid #FFF;
@@ -100,8 +105,7 @@ max-width:350px;
 	text-align: center;
 	width: auto;
 }
-#featured-area .read-more,
-#slideshow .read-more  {
+.read-more {
 	display: block;
 	float: left;
 	font-size: .8em;
@@ -113,14 +117,17 @@ max-width:350px;
 	text-transform:uppercase;
 	margin: 5px 0 0 0;
 	padding: 6px 10px;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	&:hover {
+		color: $black;
+		background-color:$white;
+	}
 }
 #slideshow p {
 	font-size: .9em;
 	line-height: 1.3em;
 	margin-bottom: .5em;
-}
-.full-image-feature h3 a, .pic-frame h3 a {
-	color: $white;
 }
 #slideshow-reel {
 		width: 20000px;
@@ -258,33 +265,23 @@ max-width:350px;
 
 /* Full width image excerpt */
 
-.full-image-feature .excerpt h3 {
-	color: $white !important;
-	text-transform: uppercase;
-	//font-size: 2.3em !important;
-}
-.full-image-feature .excerpt p {
-	color: $white !important;
-	padding-right: 40px;
-}
-
-.full-image-feature .excerpt .featured-arrow {
-//	position: absolute;
-//	bottom: 15px;
-//	right: 15px;
-	display:none;
-}
-
-#slideshow .full-image-feature {
+.full-image-feature {
 	h3 {
-
+		color:$white;
 	}
+	p {
+		padding-right: 40px;
+		color:$white;
+	}
+}
+#slideshow .full-image-feature {
 	.excerpt {
 		top: 75px;
 		bottom:auto;
 		left:45px;
 		padding:20px;
 		width:390px;
+
 	}
 }
 

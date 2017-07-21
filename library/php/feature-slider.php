@@ -40,27 +40,24 @@
 				<?php if (isset($image_type)) : ?>
 
 				<!-- Full-Size Image Output -->
+
 					<div class="slide <?php echo 'slide-' . $slider_feature_counter; ?> <?php echo 'post-' . $post->ID; ?> full-image-feature">
+						<?php if(!$slider_disable_link): ?><a href="<?php the_permalink(); ?>"><?php endif; ?>
 							<?php if ( has_post_thumbnail() ): ?>
-									<?php if(!$slider_disable_link): ?><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php endif; ?>
 									<?php the_post_thumbnail('full-width-thumb'); ?>
-									<?php if(!$slider_disable_link): ?></a><?php endif; ?>
 							<?php endif;?>
 				<?php if(!isset($disabled_caption)) : ?>
 						<div class="excerpt">
-					<?php if(!$slider_disable_link): ?><a href="<?php the_permalink(); ?>"><?php endif; ?>
 						<h3><?php the_title(); ?></h3>
 						<?php the_excerpt(); ?>
-						<?php if(!$slider_disable_link): ?><img src="<?php bloginfo('stylesheet_directory'); ?>/images/feature-arrow.png" class="featured-arrow" alt="" /><?php endif; ?>
 					<?php if (!empty($custom_button_text)): ?>
-						<a class="read-more" href="<?php echo get_permalink(); ?>"><?php echo $custom_button_text; ?></a>
+						<span class="read-more"><?php echo $custom_button_text; ?></span>
 					<?php endif ?>
-					<?php if(!$slider_disable_link): ?></a><?php endif; ?>
 						</div><!-- end .excerpt -->
 				<?php endif ?>
+
+						<?php if(!$slider_disable_link): ?></a><?php endif; ?>
 					</div><!-- end .slide -->
-					
-				
 				<?php else : ?>
 					
 				<!-- Half-Size Image Output -->
