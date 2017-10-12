@@ -30,5 +30,17 @@ jQuery(document).ready(function($) {
     $('#institutional-footer a').click(function() {
         _gaq.push( [ '_trackEvent', 'Global Footer', 'Click', $(this).attr('href') ] );
     });
+
+    $('#featured-area a').click(function() {
+        _gaq.push( [ '_trackEvent', 'Story Stacker', 'Click', $(this).attr('href') ] );
+    });
+
+    $('#slideshow .slide a').click(function() {
+        _gaq.push( [ '_trackEvent', 'Homepage Slider', 'Click', $(this).attr('href') ] );
+    });
+
+    $('.flexslider .slides a').click(function() {
+        _gaq.push( [ '_trackEvent', 'Mobile Homepage Slider', 'Click', $(this).attr('href') ] );
+    });
 });
 </script>
