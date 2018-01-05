@@ -10,17 +10,16 @@
 	<p>If you do not have an account with us, one will be created when you reserve space for this event.</p>
 	<input type="hidden" name="register_user" value="1" />
 	<p>
-		<label for='user_name'><?php _e('Name (required)','events-manager') ?></label>
+		<label for='user_name'><?php _e('Name: (required)','events-manager') ?></label>
 		<input type="text" name="user_name" id="user_name" class="input" value="<?php if(!empty($_REQUEST['user_name'])) echo esc_attr($_REQUEST['user_name']); ?>" />
 	</p>
 	<p>
-		<label for='user_email'><?php _e('Email (required)','events-manager') ?></label> 
+		<label for='user_email'><?php _e('Email: (required)','events-manager') ?></label> 
 		<input type="text" name="user_email" id="user_email" class="input" value="<?php if(!empty($_REQUEST['user_email'])) echo esc_attr($_REQUEST['user_email']); ?>"  />
 	</p>
-	
 	<?php do_action('em_register_form'); //careful if making an add-on, this will only be used if you're not using custom booking forms ?>					
-<?php endif; ?>	
+<?php endif; ?>		
 <p>
-	<label for='booking_comment'><?php _e('Comment', 'events-manager') ?></label>
+	<label for='booking_comment'><?php _e('Comment:', 'events-manager') ?></label>
 	<textarea name='booking_comment' rows="2" cols="20"><?php echo !empty($_REQUEST['booking_comment']) ? esc_attr($_REQUEST['booking_comment']):'' ?></textarea>
-</p>	
+</p>
