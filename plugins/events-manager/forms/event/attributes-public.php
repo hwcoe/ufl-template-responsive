@@ -7,11 +7,12 @@ global $EM_Event;
 /* @var $EM_Event EM_Event */
 $attributes = em_get_attributes();
 $has_deprecated = false;
+$required = apply_filters('em_required_html','<i>*</i>');
 ?>
 <?php if( count( $attributes['names'] ) > 0 ) : ?>
 	<?php foreach( $attributes['names'] as $name) : ?>
 	<div class="event-attributes">
-		<label for="em_attributes[<?php echo $name ?>]"><?php echo $name ?></label>
+		<label for="em_attributes[<?php echo $name ?>]"><?php echo $name ?>:<?php echo $name == 'Host' ? $required : ''; ?></label>
 		<?php if( count($attributes['values'][$name]) > 1 ): ?>
 		<select name="em_attributes[<?php echo $name ?>]">
 			<?php foreach($attributes['values'][$name] as $attribute_val): ?>

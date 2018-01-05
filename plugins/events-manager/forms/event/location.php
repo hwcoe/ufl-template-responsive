@@ -27,10 +27,9 @@ $required = apply_filters('em_required_html','<i>*</i>');
 		<input id='location-longitude' name='location_longitude' type='text' value='<?php echo esc_attr($EM_Event->get_location()->location_longitude); ?>' size='15' />
 	</div>
 	<?php if( get_option('dbem_use_select_for_locations') || !$EM_Event->can_manage('edit_locations','edit_others_locations') ) : ?> 
-	<table class="em-location-data">
-		<tr class="em-location-data-select">
-			<th><?php esc_html_e('Location:','events-manager') ?> </th>
-			<td> 
+	<div class="em-location-data">
+		<p class="em-location-data-select">
+			<label for="location-id"><?php esc_html_e('Location:','events-manager') ?> </label>
 				<select name="location_id" id='location-select-id' size="1">  
 					<?php if(!get_option('dbem_require_location',true)): ?><option value="0"><?php esc_html_e('No Location','events-manager'); ?></option><?php endif; ?>
 					<?php 
@@ -55,11 +54,10 @@ $required = apply_filters('em_required_html','<i>*</i>');
 					}
 					?>
 				</select>
-			</td>
-		</tr>
-	</table>
+		</p>
+	</div>
 	<?php else : ?>
-	<table class="em-location-data">
+	<div class="em-location-fields">
 		<?php 
 			global $EM_Location;
 			if( $EM_Event->location_id !== 0 ){
@@ -70,58 +68,39 @@ $required = apply_filters('em_required_html','<i>*</i>');
 				$EM_Location = new EM_Location();
 			}
 		?>
-		<tr class="em-location-data-name">
-			<th><?php _e ( 'Location Name:', 'events-manager')?></th>
-			<td>
-				<input id='location-id' name='location_id' type='hidden' value='<?php echo esc_attr($EM_Location->location_id); ?>' size='15' />
-				<input id="location-name" type="text" name="location_name" value="<?php echo esc_attr($EM_Location->location_name, ENT_QUOTES); ?>" /><?php echo $required; ?>													
-				<br />
-				<em id="em-location-search-tip"><?php esc_html_e( 'Create a location or start typing to search a previously created location.', 'events-manager')?></em>
-				<em id="em-location-reset" style="display:none;"><?php esc_html_e('You cannot edit saved locations here.', 'events-manager'); ?> <a href="#"><?php esc_html_e('Reset this form to create a location or search again.', 'events-manager')?></a></em>
-			</td>
- 		</tr>
-		<tr class="em-location-data-address">
-			<th><?php _e ( 'Address:', 'events-manager')?>&nbsp;</th>
-			<td>
-				<input id="location-address" type="text" name="location_address" value="<?php echo esc_attr($EM_Location->location_address); ; ?>" /><?php echo $required; ?>
-			</td>
-		</tr>
-		<tr class="em-location-data-town">
-			<th><?php _e ( 'City/Town:', 'events-manager')?>&nbsp;</th>
-			<td>
-				<input id="location-town" type="text" name="location_town" value="<?php echo esc_attr($EM_Location->location_town); ?>" /><?php echo $required; ?>
-			</td>
-		</tr>
-		<tr class="em-location-data-state">
-			<th><?php _e ( 'State/County:', 'events-manager')?>&nbsp;</th>
-			<td>
-				<input id="location-state" type="text" name="location_state" value="<?php echo esc_attr($EM_Location->location_state); ?>" />
-			</td>
-		</tr>
-		<tr class="em-location-data-postcode">
-			<th><?php _e ( 'Postcode:', 'events-manager')?>&nbsp;</th>
-			<td>
-				<input id="location-postcode" type="text" name="location_postcode" value="<?php echo esc_attr($EM_Location->location_postcode); ?>" />
-			</td>
-		</tr>
-		<tr class="em-location-data-region">
-			<th><?php _e ( 'Region:', 'events-manager')?>&nbsp;</th>
-			<td>
-				<input id="location-region" type="text" name="location_region" value="<?php echo esc_attr($EM_Location->location_region); ?>" />
-			</td>
-		</tr>
-		<tr class="em-location-data-country">
-			<th><?php _e ( 'Country:', 'events-manager')?>&nbsp;</th>
-			<td>
-				<select id="location-country" name="location_country">
+		<p class="em-location-data-name">
+			<label for="location-name"><?php _e ( 'Location Name:', 'events-manager')?><?php echo $required; ?></label>
+			<input id='location-id' name='location_id' type='hidden' value='<?php echo esc_attr($EM_Location->location_id); ?>' size='15' />
+			<input id="location-name" type="text" name="location_name" value="<?php echo esc_attr($EM_Location->location_name, ENT_QUOTES); ?>" />
+			<em id="em-location-search-tip"><?php esc_html_e( 'Create a location or start typing to search for an existing location.', 'events-manager')?></em>
+			<em id="em-location-reset" style="display:none;"><?php esc_html_e('You cannot edit existing locations here.', 'events-manager'); ?> <a href="#"><?php esc_html_e('Reset this form to create a location or search again.', 'events-manager')?></a></em>
+		</p>
+		<p class="em-location-data-address">
+			<label for="location-address"><?php _e ( 'Address:', 'events-manager')?><?php echo $required; ?></label>
+			<input id="location-address" type="text" name="location_address" value="<?php echo esc_attr($EM_Location->location_address); ; ?>" />
+		</p>
+		<p class="em-location-data-town">
+			<label for="location-town"><?php _e ( 'City:', 'events-manager')?><?php echo $required; ?></label>
+			<input id="location-town" type="text" name="location_town" value="<?php echo esc_attr($EM_Location->location_town); ?>" />
+		</p>
+		<p class="em-location-data-state">
+			<label for="location-state"><?php _e ( 'State:', 'events-manager')?><?php echo $required; ?></label>
+			<input id="location-state" type="text" name="location_state" value="<?php echo esc_attr($EM_Location->location_state); ?>" />
+		</p>
+		<p class="em-location-data-postcode">
+			<label for="location-postcode"><?php _e ( 'Zip Code:', 'events-manager')?><?php echo $required; ?></label>
+			<input id="location-postcode" type="text" name="location_postcode" value="<?php echo esc_attr($EM_Location->location_postcode); ?>" />
+		</p>
+		<p class="em-location-data-country">
+			<label for="location-country"><?php _e ( 'Country:', 'events-manager')?><?php echo $required; ?></label>
+			<select id="location-country" name="location_country">
 					<option value="0" <?php echo ( $EM_Location->location_country == '' && $EM_Location->location_id == '' && get_option('dbem_location_default_country') == '' ) ? 'selected="selected"':''; ?>><?php _e('none selected','events-manager'); ?></option>
 					<?php foreach(em_get_countries() as $country_key => $country_name): ?>
 					<option value="<?php echo esc_attr($country_key); ?>" <?php echo ( $EM_Location->location_country == $country_key || ($EM_Location->location_country == '' && $EM_Location->location_id == '' && get_option('dbem_location_default_country')==$country_key) ) ? 'selected="selected"':''; ?>><?php echo esc_html($country_name); ?></option>
 					<?php endforeach; ?>
-				</select><?php echo $required; ?>
-			</td>
-		</tr>
-	</table>
+				</select>
+		</p>
+	</div>
 	<?php endif; ?>
 	<?php if ( get_option( 'dbem_gmap_is_active' ) ) em_locate_template('forms/map-container.php',true); ?>
 	<br style="clear:both;" />
