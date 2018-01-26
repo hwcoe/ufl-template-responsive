@@ -22,11 +22,6 @@ function optionsframework_option_name() {
  */
 function optionsframework_options() {
 	
-	$parent_colleges_institutes = array(
-		"University of Florida" => "University of Florida",
-		"None" => "None"
-	);
-	
 	// Pull all the categories into an array
 	$options_categories = array("Choose a Category" => "Choose a Category");	
 	$options_categories_obj = get_categories(array('hide_empty' => 0));
@@ -49,13 +44,6 @@ function optionsframework_options() {
 		
 	$options[] = array( "name" => "General",
 			"type" => "heading");
-			
-	$options[] = array( "name" => "Parent College / Institute",
-			"desc" => "Select your parent organization.",
-			"id" => "opt_parent_colleges_institutes",
-			"std" => "one",
-			"type" => "select",
-			"options" => $parent_colleges_institutes);
 					
 	$options[] = array( "name" => "Google Analytics Account Number",
 			"desc" => "Enter your account number for Google Analytics (e.g., 'UA-xxxxxxx-x' or 'UA-xxxxxxx-xx' )",

@@ -198,7 +198,6 @@ function ufandshands_header_adder() {
 	
 	$bloginfo_url = get_bloginfo('template_url');
 	$bloginfo_name = get_bloginfo('name');
-	$parent_org = of_get_option('opt_parent_colleges_institutes');
 	$custom_css = of_get_option('opt_custom_css');
 	$custom_responsive_css = of_get_option('opt_responsive_css');
 	global $detect_mobile;
@@ -206,16 +205,14 @@ function ufandshands_header_adder() {
 
 	// Site <title> logic
 	echo "<title>";
-	if (!is_front_page()) {
-		echo wp_title('&raquo;', false, 'right') . " " . $bloginfo_name;
-	} else { //if we are on the home page, only show the name of the site
-		echo $bloginfo_name;
-	}
-	if ( ($bloginfo_name != $parent_org) && ($parent_org == 'University of Florida')) {
-		echo " &raquo; " . $parent_org;
-	} elseif ( ($parent_org != 'None') && ($bloginfo_name != 'University of Florida') ) {
-		echo " &raquo; " . $parent_org . " &raquo; University of Florida";
-	}
+		if (is_front_page()) {
+			echo $bloginfo_name;
+		} else {
+			echo wp_get_document_title();
+		}
+		if ($bloginfo_name != 'Herbert Wertheim College of Engineering') {
+			echo " - Herbert Wertheim College of Engineering"; 
+		}
 	echo "</title>\n";
 
 
@@ -747,13 +744,13 @@ function ufandshands_register_menus() {
 /* ----------------------------------------------------------------------------------- */
 
 $college_inst_data = array(
-		"University of Florida" => array(
-				"facebook" => "https://www.facebook.com/ufwertheim/",
-				"twitter" => "https://twitter.com/ufwertheim/",
-				"youtube" => "https://www.youtube.com/user/gatorengineering",
-				"linkedin" => "https://www.linkedin.com/edu/school?id=193009",
-				"instagram" => "https://instagram.com/ufwertheim/",
-				"flickr" => "https://www.flickr.com/photos/gatorengineering/"
+		"HWCOE" => array(
+			"facebook" => "https://www.facebook.com/ufwertheim/",
+			"twitter" => "https://twitter.com/ufwertheim/",
+			"youtube" => "https://www.youtube.com/user/gatorengineering",
+			"linkedin" => "https://www.linkedin.com/edu/school?id=193009",
+			"instagram" => "https://instagram.com/ufwertheim/",
+			"flickr" => "https://www.flickr.com/photos/gatorengineering/"
 	)
 );
 
@@ -761,7 +758,7 @@ function ufandshands_get_socialnetwork_url($type) {
 
 	global $college_inst_data;
 
-	$parent_org = of_get_option("opt_parent_colleges_institutes");
+	$parent_org = "HWCOE";
 	$parent_org_socialnetwork = $college_inst_data[$parent_org][$type];
 
 	$socialnetwork_type = of_get_option("opt_" . $type . "_url");
@@ -771,17 +768,17 @@ function ufandshands_get_socialnetwork_url($type) {
 	} elseif (!empty($parent_org_socialnetwork)) {
 		$output = $parent_org_socialnetwork;
 	} elseif ($type == "facebook") {
-		$output = $college_inst_data["University of Florida"][$type];
+		$output = $college_inst_data["HWCOE"][$type];
 	} elseif ($type == "twitter") {
-		$output = $college_inst_data["University of Florida"][$type];
+		$output = $college_inst_data["HWCOE"][$type];
 	} elseif ($type == "youtube") {
-		$output = $college_inst_data["University of Florida"][$type];
+		$output = $college_inst_data["HWCOE"][$type];
 	} elseif ($type == "linkedin") {
-		$output = $college_inst_data["University of Florida"][$type];
+		$output = $college_inst_data["HWCOE"][$type];
 	} elseif ($type == "instagram") {
-		$output = $college_inst_data["University of Florida"][$type];
+		$output = $college_inst_data["HWCOE"][$type];
 	} elseif ($type == "flickr") {
-		$output = $college_inst_data["University of Florida"][$type];
+		$output = $college_inst_data["HWCOE"][$type];
 	}
 
 	echo $output;
@@ -980,24 +977,18 @@ function ufandshands_site_title() {
 	// Begin to build $title string
 	$title = "<div id='header-title' class='alpha omega span-15'><a href='" . get_bloginfo('url') . "' title='" . get_bloginfo('name') . "'>";
 
-	//Build logo of parent organization
-	$parent_org = of_get_option("opt_parent_colleges_institutes");
+	//build logo
+	$parent_org = "UF";
 
-	if ($parent_org == "University of Florida" && empty($ufandshands_alternate_logo)) {
+	if (empty($ufandshands_alternate_logo)) {
 		$parent_org_logo = "uf";
-		$header_title_text_right_class_size = "";
-	} elseif ($parent_org == "University of Florida" && !empty($ufandshands_alternate_logo)) {
+	} else {
 		$parent_org_logo = "alt";
-		$header_title_text_right_class_size = " ";
 		$parent_org = strip_tags($site_title);
-	}  else {
-		$parent_org_logo = "uf";
-		$parent_org = "University of Florida";
-		$header_title_text_right_class_size = "";
 	}
 
 	$title .= "<h3 id='header-parent-organization-logo' class='ir " . $parent_org_logo . "'>" . $parent_org . "</h3>"; // logos
-	$title .= "<div id='header-title-text-right' class='alpha omega " . $header_title_text_right_class_size . " " . $parent_org_logo . "'>"; // logos
+	$title .= "<div id='header-title-text-right' class='alpha omega " . $parent_org_logo . "'>"; // logos
 
 	if (get_bloginfo('title')=="University of Florida") { // UF custom title begin
 	
