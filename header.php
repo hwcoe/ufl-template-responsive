@@ -57,7 +57,9 @@ $custom_responsive_css = of_get_option('opt_responsive_css');
 	})();
 </script>
 </head>
-
+<?php 
+global $class;
+?>
 <body <?php body_class($class); ?>>
 	<div id="full-modal"></div>
 		<ul class="screen-reader-text">
