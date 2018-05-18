@@ -92,10 +92,26 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 	 			<nav class="footer-links span-6">
 	 				<ul>
 						<li><a href="<?php echo home_url(); ?>">Home</a></li>
-						<?php wp_list_pages('title_li=&depth=1'); ?>
+						<?php 
+							// global $footer_links;
+							if ( has_nav_menu('main_menu') ) {
+								// show main menu overide if one exists
+								$footer_links = wp_nav_menu( array(
+									'walker'   => new ufl_nav_walker,
+									'container' => '',
+									'theme_location' => 'main_menu'
+								) );
+							} else {
+								// otherwise list top level pages
+								$footer_links =	wp_list_pages( array(
+									'title_li' 	=> '',
+									'depth' 	=> 1
+								) );
+							} 
+						?>
+						<?php echo $footer_links; ?>
 						<li><a href="/about-this-site/">About This Site</a></li>
 						<?php $intranet_url = of_get_option("opt_intranet_url"); if(!empty($intranet_url)) { echo "<li><a href=\"".$intranet_url."\">Intranet</a></li> ";} ?>
-						
 					</ul>
 	 			</nav>
 
