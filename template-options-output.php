@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Template Options Test
+Template Name: Template Options Output
 */
 
 get_header(); ?>
@@ -106,7 +106,7 @@ get_header(); ?>
 					echo "</ul>";
 
 				?>
-
+				
 				</div><!-- #entry-content -->
 			
 			</div><!-- #content -->
