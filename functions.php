@@ -174,7 +174,7 @@ return $existing_mimes;
 function ufandshands_lightbox_rel ($content) {
 	global $post;
 	$pattern = "/<a(.*?)href=('|\")([^>]*).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>(.*?)<\/a>/i";
-	$replacement = '<a$1href=$2$3.$4$5 rel="prettyPhoto['.$post->ID.']"$6>$7</a>';
+	$replacement = '<a$1href=$2$3.$4$5 class="prettyPhoto" rel="prettyPhoto['.$post->ID.']"$6>$7</a>';
 	$rel_content = preg_replace($pattern, $replacement, $content, -1, $count);
 	if ($count > 1) {
 		$content = $rel_content;
@@ -182,10 +182,16 @@ function ufandshands_lightbox_rel ($content) {
 	return $content;
 }
 
-
 add_filter('the_content', 'ufandshands_lightbox_rel', 12);
 add_filter('get_comment_text', 'ufandshands_lightbox_rel');
 
+// Add title attribute to gallery image tags
+function ufandshands_gallery_img_atts( $atts, $attachment ) {
+	// passes gallery image description to title attribute
+    $atts['title'] = $attachment->post_content;
+    return $atts;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'ufandshands_gallery_img_atts', 10, 2 );
 
 /* ----------------------------------------------------------------------------------- */
 /* Misc. Header and Footer Items -- helps keep the template header and footer cleaner

@@ -1,17 +1,17 @@
 jQuery(document).ready(function($) {
-	      
-    // PrettyPhoto
-    function ufandshands_lightbox() {
+		  
+	// PrettyPhoto
+	function ufandshands_lightbox() {
 
-      //$("a[rel^='prettyPhoto'],.gallery a").prettyPhoto({
-      $("a[href$='.jpg'], a[href$='.jpeg'], a[href$='.gif'], a[href$='.png']").prettyPhoto({
-        animationSpeed:'fast',
-        slideshow:5000,
-        theme:'pp_default',
-        show_title:false,
-        social_tools:false,
-        overlay_gallery: true,
-        markup: '<div class="pp_pic_holder"> \
+	  //$("a[rel^='prettyPhoto'],.gallery a").prettyPhoto({
+	  $("a[href$='.jpg'], a[href$='.jpeg'], a[href$='.gif'], a[href$='.png']").prettyPhoto({
+		animationSpeed:'fast',
+		slideshow:5000,
+		theme:'pp_default',
+		show_title:false,
+		social_tools:false,
+		overlay_gallery: true,
+		markup: '<div class="pp_pic_holder"> \
 						<div class="ppt">&nbsp;</div> \
 						<div class="pp_top"> \
 							<div class="pp_left"></div> \
@@ -38,7 +38,7 @@ jQuery(document).ready(function($) {
 											</div> \
 											<p class="pp_description"></p> \
 											{pp_social} \
-                      <a href="#" class="pp_expand" title="Expand the image">Expand</a> \
+					  <a href="#" class="pp_expand" title="Expand the image">Expand</a> \
 										</div> \
 									</div> \
 								</div> \
@@ -52,18 +52,21 @@ jQuery(document).ready(function($) {
 						</div> \
 					</div> \
 					<div class="pp_overlay"></div>'
-      });
+	  });
 
-    }
+	  // pass image title to its parent anchor in order to display in lightbox
+		$('#main-content a img').each(function(key,$elem){
+		    $(this).parent().attr('title',$(this).attr('title'));
+		});
+	}
 
-    if(jQuery().prettyPhoto) {
+	if(jQuery().prettyPhoto) {
 
-      ufandshands_lightbox(); 
+	  ufandshands_lightbox(); 
 
-    }
-     
+	}
+	 
 });
-
 
  // $(document).ready(function() {
 jQuery(document).ready(function($) {
