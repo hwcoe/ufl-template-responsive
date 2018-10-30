@@ -168,6 +168,17 @@ return $existing_mimes;
 // add_filter( 'image_send_to_editor', 'protocol_relative_uris', 10 );
 
 /* ----------------------------------------------------------------------------------- */
+/* Add title attribute to gallery image tags
+/* ----------------------------------------------------------------------------------- */
+function ufandshands_gallery_img_atts( $atts, $attachment ) {
+	// passes gallery image description to title attribute
+    $atts['title'] = $attachment->post_content;
+    return $atts;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'ufandshands_gallery_img_atts', 10, 2 );
+
+
+/* ----------------------------------------------------------------------------------- */
 /* Add Lightbox rel attribute for Galleries
 /* ----------------------------------------------------------------------------------- */
 
@@ -185,13 +196,6 @@ function ufandshands_lightbox_rel ($content) {
 add_filter('the_content', 'ufandshands_lightbox_rel', 12);
 add_filter('get_comment_text', 'ufandshands_lightbox_rel');
 
-// Add title attribute to gallery image tags
-function ufandshands_gallery_img_atts( $atts, $attachment ) {
-	// passes gallery image description to title attribute
-    $atts['title'] = $attachment->post_content;
-    return $atts;
-}
-add_filter( 'wp_get_attachment_image_attributes', 'ufandshands_gallery_img_atts', 10, 2 );
 
 /* ----------------------------------------------------------------------------------- */
 /* Misc. Header and Footer Items -- helps keep the template header and footer cleaner
