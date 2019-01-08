@@ -357,7 +357,8 @@ header {
 	bottom: 0;
 	position: absolute;
 	right: 25px;
-	padding: 7px 18px 5px 18px;
+	// padding: 7px 18px 5px 18px;
+	padding: 5px 18px 3px 18px;
 	text-decoration: none;
 	text-align: center;
 	text-shadow: 0 1px 1px $dark-orange;
@@ -366,7 +367,7 @@ header {
 	color: $white;
 	@include spaced-headline(sans);
 	font-weight:bold;
-	font-size: 1.1em;#selector {
+	font-size: 1.4em;#selector {
 		background: url('../../images/bg-breadcrumb-item.jpg') no-repeat scroll top left;
 		width: 10px;
 		height: 21px;
