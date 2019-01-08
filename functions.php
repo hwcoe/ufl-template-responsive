@@ -846,7 +846,7 @@ function ufandshands_sidebar_navigation($post) {
 function ufandshands_breadcrumbs() {
 	global $post;
 	if (is_page() && !is_front_page()) {
-		$breadcrumb = "<nav id='breadcrumb'><div class='container'>";
+		$breadcrumb = "<nav id='breadcrumb' aria-label='breadcrumb'><div class='container'>";
 		$breadcrumb .= '<a href="' . get_bloginfo('url') . '">Home</a> ';
 		$post_ancestors = get_post_ancestors($post);
 		if ($post_ancestors) {

@@ -89,7 +89,7 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 					?>
 					</address>
 	 			</div>
-	 			<nav class="footer-links span-6">
+	 			<nav class="footer-links span-6" aria-label="footer links">
 	 				<ul>
 						<li><a href="<?php echo home_url(); ?>">Home</a></li>
 						<?php 

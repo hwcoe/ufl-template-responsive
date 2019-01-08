@@ -1,5 +1,5 @@
 <!-- begin responsive menu -->
-   <nav id="responsive-menu">
+   <nav id="responsive-menu" aria-label="responsive menu">
 <?php // orange header action item box
 			$actionitem_text = of_get_option(opt_actionitem_text);
 			$actionitem_url = of_get_option(opt_actionitem_url);
