@@ -110,7 +110,7 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 							} 
 						?>
 						<?php echo $footer_links; ?>
-						<li><a href="/about-this-site/">About This Site</a></li>
+						<li><a href="https://www.eng.ufl.edu/about-this-site/">About This Site</a></li>
 						<?php $intranet_url = of_get_option("opt_intranet_url"); if(!empty($intranet_url)) { echo "<li><a href=\"".$intranet_url."\">Intranet</a></li> ";} ?>
 					</ul>
 	 			</nav>
@@ -123,10 +123,10 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 							if (!empty($makeagift_url)) {
 								echo "<a href='".$makeagift_url."'>";
 							} else { 
-								echo "<a href='https://www.uff.ufl.edu/OnlineGiving/FundDetail.asp?FundCode=000661'>";
+								echo "<a href='https://www.uff.ufl.edu/giving-opportunities/000661-engineering-development-fund/'>";
 							}
 						?>Make a Gift</a></li>
-	 					<li><a href="/about/transformation/" title="Powering the New Engineer to Transform the Future" class="pnetf ir">Powering the New Engineer to Transform the Future</a></li>
+	 					<li><a href="https://www.eng.ufl.edu/about/transformation/" title="Powering the New Engineer to Transform the Future" class="pnetf ir">Powering the New Engineer to Transform the Future</a></li>
 	 				</ul>
 							
 	 			</div>
@@ -141,7 +141,7 @@ $opt_footer_widgets_visibility = of_get_option("opt_footer_widgets_visibility");
 						<li><a href="<?php ufandshands_get_socialnetwork_url("instagram"); ?>" title="Instagram" class="instagram ir">Instagram</a></li>
 						<li><a href="<?php ufandshands_get_socialnetwork_url("flickr"); ?>" title="Flickr" class="flickr ir">Flickr</a></li>
 					</ul>
-					<p class="clear mail"><a href="/alumni-giving/contact/update-info/">Update Your Information</a></p>
+					<p class="clear mail"><a href="https://www.eng.ufl.edu/alumni/stay-connected/">Update Your Information</a></p>
 	 			</div>
 	 		</div> <!-- /footer-container -->
 	 	</div> <!-- /container -->
